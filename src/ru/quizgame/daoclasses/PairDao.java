@@ -65,7 +65,7 @@ public class PairDao {
 	       ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
 	       c = ds.getConnection();
 			stmt = c.createStatement();
-			stmt.executeUpdate( "update pairs set order_number = " + pair.getOrderNumber() + ", is_correct = "+ pair.getIsCorrect() + " + where (game_id = " + pair.getGameId() + " and question_id = " + pair.getQuestionId() + ")");
+			stmt.executeUpdate( "update pairs set order_number = " + pair.getOrderNumber() + ", is_correct = "+ pair.getIsCorrect() + " where (game_id = " + pair.getGameId() + " and question_id = " + pair.getQuestionId() + ")");
 			stmt.close();
 			c.close();
 		

@@ -56,7 +56,7 @@ public class UserDao {
 	       ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
 		       c = ds.getConnection();
 			stmt = c.createStatement();
-			stmt.executeUpdate( "insert into users values (" + user.getId() + ", '" + user.getName() + "')");
+			stmt.executeUpdate( "insert into users values (default, '" + user.getName() + "')");
 			stmt.close();
 			c.close();
 	}

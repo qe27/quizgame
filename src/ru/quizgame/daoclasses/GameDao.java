@@ -43,7 +43,7 @@ public class GameDao {
     public static void insertGame (Game game) throws NamingException, SQLException {     
         connectToDatabase();
         stmt = c.createStatement();
-        stmt.executeUpdate("insert into games values("+game.getId()+","+
+        stmt.executeUpdate("insert into games values(default,"+
                 game.getPlayer_id()+","+game.getScore()+","+game.getFinished()+")");
         stmt.close();
         c.close();  
