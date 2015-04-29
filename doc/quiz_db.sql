@@ -62,22 +62,35 @@ ALTER TABLE pairs ADD CONSTRAINT pairs_fk2 FOREIGN KEY (question_id) REFERENCES 
 INSERT INTO users VALUES (default, 'christopher_robin');
 INSERT INTO users VALUES (default, 'winnie_the_pooh');
 INSERT INTO users VALUES (default, 'owl');
-INSERT INTO users VALUES (default, 'pigglet');
+INSERT INTO users VALUES (default, 'piglet');
 INSERT INTO users VALUES (default, 'rabbit');
+INSERT INTO users VALUES (default, 'eeyore');
+INSERT INTO users VALUES (default, 'tigger');
+INSERT INTO users VALUES (default, 'kanga');
+INSERT INTO users VALUES (default, 'roo');
 
 INSERT INTO games VALUES (default, 1, 50, true);
 INSERT INTO games VALUES (default, 1, 50, true);
 INSERT INTO games VALUES (default, 2, 10, true);
-INSERT INTO games VALUES (default, 2, 20, true);
+INSERT INTO games VALUES (default, 2, 10, true);
 INSERT INTO games VALUES (default, 2, 40, true);
-INSERT INTO games VALUES (default, 4, 0, true);
+INSERT INTO games VALUES (default, 4, 10, true);
+INSERT INTO games VALUES (default, 3, 70, true);
+INSERT INTO games VALUES (default, 3, 60, true);
+INSERT INTO games VALUES (default, 5, 20, true);
+INSERT INTO games VALUES (default, 6, 40, true);
+INSERT INTO games VALUES (default, 7, 30, true);
+INSERT INTO games VALUES (default, 7, 30, true);
+INSERT INTO games VALUES (default, 7, 20, true);
+INSERT INTO games VALUES (default, 7, 20, true);
+INSERT INTO games VALUES (default, 7, 20, true);
 
 INSERT INTO questions VALUES (default, 'Сколько стран в мире?', '1)менее 150@2)160@3)240@4)более 250@', 4, 10);
 INSERT INTO questions VALUES (default, 'Какая страна выиграла чемпионат мира по футболу в 2014 году?', '1)Бразилия@2)Франция@3)Германия@4)Россия@', 3, 10);
 INSERT INTO questions VALUES (default, 'Сколько законов Ньютона в классической механике?', '1)1@2)2@3)3@4)4@', 3, 10);
 INSERT INTO questions VALUES (default, 'Сколько человек в хоккейной команде?', '1)5@2)6@3)7@4)8@', 2, 10);
-INSERT INTO questions VALUES (default, 'Что из нижеперечисленного не является называнием языка программирования?', '1)С@2)С%@3)C++@4)C#@', 2, 10);
-INSERT INTO questions VALUES (default, 'Что из нижеперечиселнного не является разновидностью макарон?', '1)Тортеллини@2)Фетуччине@3)Тальятелле@4)Лингуине@', 1, 30);
+INSERT INTO questions VALUES (default, 'Что из нижеперечисленного не является названием языка программирования?', '1)С@2)С%@3)C++@4)C#@', 2, 10);
+INSERT INTO questions VALUES (default, 'Что из нижеперечисленного не является разновидностью макарон?', '1)Тортеллини@2)Фетуччине@3)Тальятелле@4)Лингуине@', 1, 30);
 INSERT INTO questions VALUES (default, 'Какова длина вектора с координатами (5,12)?', '1)7@2)10@3)13@4)17@', 3, 10);
 
 INSERT INTO pairs VALUES (1,1,1,true);
@@ -111,10 +124,62 @@ INSERT INTO pairs VALUES (5,4,4,false);
 INSERT INTO pairs VALUES (5,6,5,true);
 
 INSERT INTO pairs VALUES (6,2,1,false);
-INSERT INTO pairs VALUES (6,1,2,false);
+INSERT INTO pairs VALUES (6,1,2,true);
 INSERT INTO pairs VALUES (6,3,3,false);
 INSERT INTO pairs VALUES (6,7,4,false);
 INSERT INTO pairs VALUES (6,6,5,false);
 
--- test query:
--- select questions.* from questions, pairs, games where games.id = 1 and games.id = pairs.game_id and questions.id = pairs.question_id;
+INSERT INTO pairs VALUES (7,2,1,true);
+INSERT INTO pairs VALUES (7,1,2,true);
+INSERT INTO pairs VALUES (7,3,3,true);
+INSERT INTO pairs VALUES (7,7,4,true);
+INSERT INTO pairs VALUES (7,6,5,true);
+
+INSERT INTO pairs VALUES (8,5,1,false);
+INSERT INTO pairs VALUES (8,1,2,true);
+INSERT INTO pairs VALUES (8,3,3,true);
+INSERT INTO pairs VALUES (8,7,4,true);
+INSERT INTO pairs VALUES (8,6,5,true);
+
+INSERT INTO pairs VALUES (9,5,1,false);
+INSERT INTO pairs VALUES (9,1,2,true);
+INSERT INTO pairs VALUES (9,3,3,false);
+INSERT INTO pairs VALUES (9,7,4,true);
+INSERT INTO pairs VALUES (9,6,5,false);
+
+INSERT INTO pairs VALUES (10,5,1,true);
+INSERT INTO pairs VALUES (10,1,2,true);
+INSERT INTO pairs VALUES (10,3,3,true);
+INSERT INTO pairs VALUES (10,7,4,true);
+INSERT INTO pairs VALUES (10,6,5,false);
+
+INSERT INTO pairs VALUES (11,5,1,true);
+INSERT INTO pairs VALUES (11,1,2,true);
+INSERT INTO pairs VALUES (11,3,3,true);
+INSERT INTO pairs VALUES (11,7,4,false);
+INSERT INTO pairs VALUES (11,6,5,false);
+
+INSERT INTO pairs VALUES (12,5,1,true);
+INSERT INTO pairs VALUES (12,1,2,true);
+INSERT INTO pairs VALUES (12,3,3,true);
+INSERT INTO pairs VALUES (12,7,4,false);
+INSERT INTO pairs VALUES (12,6,5,false);
+
+INSERT INTO pairs VALUES (13,5,1,true);
+INSERT INTO pairs VALUES (13,1,2,true);
+INSERT INTO pairs VALUES (13,3,3,false);
+INSERT INTO pairs VALUES (13,7,4,false);
+INSERT INTO pairs VALUES (13,6,5,false);
+
+INSERT INTO pairs VALUES (14,5,1,true);
+INSERT INTO pairs VALUES (14,1,2,true);
+INSERT INTO pairs VALUES (14,3,3,false);
+INSERT INTO pairs VALUES (14,7,4,false);
+INSERT INTO pairs VALUES (14,6,5,false);
+
+INSERT INTO pairs VALUES (15,5,1,true);
+INSERT INTO pairs VALUES (15,1,2,true);
+INSERT INTO pairs VALUES (15,3,3,false);
+INSERT INTO pairs VALUES (15,7,4,false);
+INSERT INTO pairs VALUES (15,6,5,false);
+
