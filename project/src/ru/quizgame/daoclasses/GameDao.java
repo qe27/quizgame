@@ -39,6 +39,19 @@ public class GameDao {
         return new Game(id, player_id,score,finished);          
     }
     
+    public static int getGameCount(int player_id) throws SQLException, NamingException {    
+        connectToDatabase();
+        stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery("select count(*) as cnt from games,users " + 
+                "where users.id = games.player_id and users.id=" + player_id);
+        rs.next();
+        int count=rs.getInt("cnt");
+        rs.close();
+        stmt.close();
+        c.close();
+        return count;          
+    }
+    
     
     public static void insertGame (Game game) throws NamingException, SQLException {     
         connectToDatabase();
