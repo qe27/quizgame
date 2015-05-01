@@ -17,11 +17,11 @@
                       </button> 
             </form>
             
-             <form action="NewGame.jsp">
+             <form action="GameList.jsp">
                       <button type="submit" name="game">
                           <i>
                           <FONT>
-                           Начать игру</FONT> 
+                           Список игр</FONT> 
                           </i>
                       </button> 
             </form>
@@ -34,13 +34,10 @@
                           </i>
                       </button> 
             </form>
-<p>Список игр:</p>
-<ul>
-	<li style="margin-left: 40px;">Игра 1</li>
-	<li style="margin-left: 40px;">Игра 2</li>
-	<li style="margin-left: 40px;">...</li>
-	<li style="margin-left: 40px;">Игра n</li>
-</ul>
+
+<p align="center"><input name="name" type="text" value="Введите ваше имя"></p>
+<div>&nbsp;</div>
+<div style="text-align: center;"><input name="create game" type="button" value="Создать игру"></div>
 
 </body>
 </html>
