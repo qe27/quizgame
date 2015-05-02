@@ -58,6 +58,27 @@ public class UserDao {
 			return user;
 	}
         
+        static public User getUserByName (String name) throws SQLException, NamingException {
+    		Connection c;
+    		Statement stmt;
+    		DataSource ds = null;
+    		InitialContext ic;
+    		ic = new InitialContext();
+    	       ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
+    		       c = ds.getConnection();
+    			stmt = c.createStatement();
+    			ResultSet rs = stmt.executeQuery( "select * from users where (name  = '" + name + "')");
+    			User user = new User();
+    			rs.next();
+    			int Id1 = rs.getInt("id");
+    			String name1 = rs.getString("name");
+    			user.setId(Id1);
+    			user.setName(name);
+    			stmt.close();
+    			c.close();
+    			return user;
+    	}
+        
         static public int getPoints (int id) throws SQLException, NamingException {
 		Connection c;
 		Statement stmt;
@@ -149,12 +170,10 @@ public class UserDao {
 	       ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
 		       c = ds.getConnection();
 			stmt = c.createStatement();
-			stmt.executeUpdate( "insert into users values (default, '" + user.getName() + "')");
+			stmt.executeUpdate( "insert into users values (" + user.getId() + ", '" + user.getName() + "')");
 			stmt.close();
 			c.close();
 	}
 	
 	
 }
-
-
