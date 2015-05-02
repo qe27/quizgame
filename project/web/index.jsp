@@ -1,52 +1,56 @@
-<%-- 
-    Document   : index
-    Created on : 11.04.2015, 15:23:52
-    Author     : Гоша
---%>
-
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8"   
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Игра "Викторина"</title>
-    </head>
-    
-    <body>
-         
-        <br><br><br><br><br><br><br><br> 
-        <center>
-            <form action="game.jsp">
-                      <button type="submit" name="game">
-                          <i>
-                          <FONT SIZE=12 COLOR="#4876FF" FACE="Comic Sans" WIDTH="30" >
-                           &nbsp;&nbsp; &nbsp;&nbsp;Новая игра &nbsp;&nbsp; &nbsp;&nbsp;</FONT> 
-                          </i>
-                      </button> 
-            </form>
-                     
-        </center> 
-        <center>
-            <form action="stat.jsp">
-                      <button type="submit" name="stat">
-                          <i>
-                          <FONT SIZE=12 COLOR="#9A32CD" FACE="Comic Sans" WIDTH="30" >Статистика игр</FONT> 
-                          </i>
-                      </button> 
-            </form>
-        </center>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>QuizGame - Главная</title>
+</head>
+<body>
 
-        <center>
-            <form action="addQues.jsp" >
-                <button type="submit" name="addq">
-                          <i>
-                          <FONT SIZE=12 COLOR="#6a5acd" FACE="Comic Sans" WIDTH="30">Добавить вопрос</FONT> 
-                          </i>
-                      </button> 
-            </form>
-        </center>
-        
-       
-    </body>
+    <form action="index.jsp">
+              <button type="submit" name="game">
+                  <i>
+                  <FONT>
+                   Главная страница</FONT> 
+                  </i>
+              </button> 
+    </form>
+
+     <form action="GameList.jsp">
+              <button type="submit" name="game">
+                  <i>
+                  <FONT>
+                   Список игр</FONT> 
+                  </i>
+              </button> 
+    </form>
+
+                 <form action="rating">
+              <button type="submit" name="game">
+                  <i>
+                  <FONT>
+                   Рейтинг</FONT> 
+                  </i>
+              </button> 
+    </form>
+    <br>
+    <p>
+        <b><font size="24" >Добро пожаловать в QuizGame!</font></b>
+    </p>
+    <font size="16" >
+    <p>
+        <br>
+        QuizGame - это уникальная возможность проверить свой интеллект и <br>
+        померяться силами с другими игроками земного шара. Примите участие <br>
+        в увлекательной викторине, стараясь давать как можно больше правильных <br>
+        ответов, и следите за своим положением в рейтинге!<br>
+    </p>
+    <p>
+        Правила предельно просты: вам будет предложено несколько вопросов, <br>
+        на каждый из которых необходимо дать ответ за ограниченное время. <br>
+        Чем больше правильных ответов, тем больше очков вы заработаете!
+    </p>
+    </font>
+</body>
 </html>
