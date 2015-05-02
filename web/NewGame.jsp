@@ -35,9 +35,12 @@
                       </button> 
             </form>
 
-<p align="center"><input name="name" type="text" value="Введите ваше имя"></p>
-<div>&nbsp;</div>
-<div style="text-align: center;"><input name="create game" type="button" value="Создать игру"></div>
+<form name="test" method="post" action="NewGameServlet">
+  <p><b>Ваше имя:</b><br>
+   <input type="text" name = "name" size="40">
+  </p>
+  <p><input type="submit" value="Создать игру">
+ </form>
 
 </body>
 </html>
