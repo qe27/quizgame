@@ -8,7 +8,7 @@
 </head>
 <body>
 
- <form action="index.jsp">
+            <form action="index.jsp">
                       <button type="submit" name="game">
                           <i>
                           <FONT>
@@ -26,7 +26,7 @@
                       </button> 
             </form>
             
-                         <form action="rating.jsp">
+                         <form action="rating">
                       <button type="submit" name="game">
                           <i>
                           <FONT>

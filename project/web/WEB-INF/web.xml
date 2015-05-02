@@ -8,7 +8,15 @@
         <servlet-name>Ser</servlet-name>
         <url-pattern>/Ser</url-pattern>
     </servlet-mapping>
-    
+    <servlet>
+        <servlet-name>RatingServlet</servlet-name>
+        <servlet-class>ru.quizgame.servlets.RatingServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RatingServlet</servlet-name>
+        <url-pattern>/servlet/RatingServlet</url-pattern>
+    </servlet-mapping>
      <welcome-file-list>
        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
