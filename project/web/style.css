@@ -8,6 +8,7 @@ body {
 }
 p {
     line-height: 1.5em;
+    text-align: center;
 }
 h1 {
     color: #ffc;
@@ -52,5 +53,15 @@ li {
     font-style: italic;
 }
 table {
-    background-color: #ccc;
+    text-align: center;
+    margin: auto;
 }
+button {
+  color: #fff; 
+  text-decoration: none; 
+  background: rgb(212,75,56); 
+  padding: .7em 1.5em;
+  outline: none;
+}
+button:hover { background: rgb(232,95,76); }
+button:active { background: rgb(152,15,0); }

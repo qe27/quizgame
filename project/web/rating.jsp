@@ -11,42 +11,29 @@
     </head>
     <body>
         <form action="index.jsp">
-                  <button type="submit" name="game">
-                      <i>
-                      <FONT>
-                       Главная страница</FONT> 
-                      </i>
-                  </button> 
+            <button type="submit" name="game">
+                Главная страница
+            </button> 
         </form>
-
-        <form action="GameList.jsp">
-                  <button type="submit" name="game">
-                      <i>
-                      <FONT>
-                       Список игр</FONT> 
-                      </i>
-                  </button> 
+         <form action="GameList.jsp">
+            <button type="submit" name="game">
+                Список игр
+            </button> 
         </form>
-
         <form action="rating">
-                  <button type="submit" name="game">
-                      <i>
-                      <FONT>
-                       Рейтинг</FONT> 
-                      </i>
-                  </button> 
+            <button type="submit" name="game">
+                Рейтинг
+            </button> 
         </form>
         <br>
         <p>
-            <b><font size="24" >Рейтинг</font></b>
+            <b><font size="6" >Рейтинг</font></b>
         </p>
         <br>
-        <p>
-            <form method="POST" action="rating">Имя: <input type="text" name="searchString" width="40">
+            <form method="POST" action="rating">
+                <p>Имя: <input type="text" name="searchString" width="40"></p>
             </form>
-        </p>
         <br>
-        <p>
         <table border="1" width="600">
         <tr>
             <th>Имя</th>
@@ -91,6 +78,5 @@
             }
         %>
         </table>
-        </p>
     </body>
 </html>

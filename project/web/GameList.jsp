@@ -22,33 +22,21 @@ import = "java.io.IOException,
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-
- <form action="index.jsp">
-                      <button type="submit" name="game">
-                          <i>
-                          <FONT>
-                           Главная страница</FONT> 
-                          </i>
-                      </button> 
-            </form>
-            
-             <form action="NewGame.jsp">
-                      <button type="submit" name="game">
-                          <i>
-                          <FONT>
-                           Начать игру</FONT> 
-                          </i>
-                      </button> 
-            </form>
-            
-                         <form action="rating.jsp">
-                      <button type="submit" name="game">
-                          <i>
-                          <FONT>
-                           Рейтинг</FONT> 
-                          </i>
-                      </button> 
-            </form>
+    <form action="index.jsp">
+        <button type="submit" name="game">
+            Главная страница
+        </button> 
+    </form>
+     <form action="NewGame.jsp">
+        <button type="submit" name="game">
+            Начать игру
+        </button> 
+    </form>
+    <form action="rating">
+        <button type="submit" name="game">
+            Рейтинг
+        </button> 
+    </form>
 <p>Список игр:</p>
 <ul>
             <%

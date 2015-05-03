@@ -8,39 +8,26 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-
-            <form action="index.jsp">
-                      <button type="submit" name="game">
-                          <i>
-                          <FONT>
-                           Главная страница</FONT> 
-                          </i>
-                      </button> 
-            </form>
-            
-             <form action="GameList.jsp">
-                      <button type="submit" name="game">
-                          <i>
-                          <FONT>
-                           Список игр</FONT> 
-                          </i>
-                      </button> 
-            </form>
-            
-                         <form action="rating">
-                      <button type="submit" name="game">
-                          <i>
-                          <FONT>
-                           Рейтинг</FONT> 
-                          </i>
-                      </button> 
-            </form>
-
+<form action="index.jsp">
+    <button type="submit" name="game">
+        Главная страница
+    </button> 
+</form>
+ <form action="GameList.jsp">
+    <button type="submit" name="game">
+        Список игр
+    </button> 
+</form>
+<form action="rating">
+    <button type="submit" name="game">
+        Рейтинг
+    </button> 
+</form>
 <form name="test" method="post" action="NewGameServlet">
   <p><b>Ваше имя:</b><br>
    <input type="text" name = "name" size="40">
   </p>
-  <p><input type="submit" value="Создать игру">
+  <p><button type="submit">Создать игру</button>
  </form>
 
 </body>

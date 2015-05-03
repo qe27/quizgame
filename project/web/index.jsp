@@ -8,32 +8,20 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-
     <form action="index.jsp">
-              <button type="submit" name="game">
-                  <i>
-                  <FONT>
-                   Главная страница</FONT> 
-                  </i>
-              </button> 
+        <button type="submit" name="game">
+            Главная страница
+        </button> 
     </form>
-
      <form action="GameList.jsp">
-              <button type="submit" name="game">
-                  <i>
-                  <FONT>
-                   Список игр</FONT> 
-                  </i>
-              </button> 
+        <button type="submit" name="game">
+            Список игр
+        </button> 
     </form>
-
-                 <form action="rating">
-              <button type="submit" name="game">
-                  <i>
-                  <FONT>
-                   Рейтинг</FONT> 
-                  </i>
-              </button> 
+    <form action="rating">
+        <button type="submit" name="game">
+            Рейтинг
+        </button> 
     </form>
     <br><br><br>
     <p>
