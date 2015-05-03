@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>QuizGame - Главная</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 
@@ -34,13 +35,12 @@
                   </i>
               </button> 
     </form>
-    <br>
+    <br><br><br>
     <p>
-        <b><font size="24" >Добро пожаловать в QuizGame!</font></b>
+        <b><font size="5" >Добро пожаловать в QuizGame!</font></b>
     </p>
-    <font size="16" >
+    <font size="4" >
     <p>
-        <br>
         QuizGame - это уникальная возможность проверить свой интеллект и <br>
         померяться силами с другими игроками земного шара. Примите участие <br>
         в увлекательной викторине, стараясь давать как можно больше правильных <br>

@@ -53,6 +53,7 @@
        webxml="web/WEB-INF/web.xml">
         <fileset dir="web">
             <include name="*.jsp"/>
+            <include name="*.css"/>
         </fileset>     
         <lib dir="${lib}"/>         
     </war>
