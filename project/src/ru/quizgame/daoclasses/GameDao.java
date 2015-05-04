@@ -4,10 +4,15 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+
 import ru.quizgame.entityclasses.Game;
+import ru.quizgame.entityclasses.User;
 
 
 public class GameDao {
@@ -21,6 +26,31 @@ public class GameDao {
         ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
         c = ds.getConnection();
     }
+    
+	static public List<Game> getAllGames() throws SQLException, NamingException {
+		Connection c;
+		Statement stmt;
+		DataSource ds = null;
+		InitialContext ic;
+		ic = new InitialContext();
+	        ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
+		       c = ds.getConnection();
+			stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery( "select * from games ");
+                        List<Game> list = new ArrayList<Game>();
+			while (rs.next()) {
+                  
+                            int GameId = rs.getInt("id");
+                            int PlayerId = rs.getInt("player_id");
+                            int score = rs.getInt("score");
+                            Boolean isFinished = rs.getBoolean("finished");
+                            Game game = new Game(GameId, PlayerId, score, isFinished);
+                            list.add(game);
+                        }
+			stmt.close();
+			c.close();
+			return list;
+	}
     
    
     public static Game getGame(int id) throws SQLException, NamingException {    

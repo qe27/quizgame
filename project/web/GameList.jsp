@@ -11,6 +11,10 @@ import = "java.io.IOException,
                                     javax.servlet.http.HttpServlet,
                                     javax.servlet.http.HttpServletRequest,
                                     javax.servlet.http.HttpServletResponse,
+                                    java.util.Iterator,
+                                    java.util.List,
+                                    ru.quizgame.daoclasses.*,
+                                    ru.quizgame.entityclasses.*,
                                     javax.sql.DataSource"
    
     pageEncoding="utf-8"%>
@@ -40,24 +44,12 @@ import = "java.io.IOException,
 <p>Список игр:</p>
 <ul>
             <%
-        	final Connection c;
-    		final Statement stmt;
-    		DataSource ds = null;
-			InitialContext ic;
-			ic = new InitialContext();
-		       ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
-    			c = ds.getConnection();
-    		//	out.println("Connected");
-    			stmt = c.createStatement();
-    			int i = 0;
-    	        ResultSet rs = stmt.executeQuery( "select * from games");
-    			//out.println("Created");
-    	        while ( rs.next() ) {
-    	        	i++;
-    	            int gameId = rs.getInt("id");
-    	            Boolean finished  = rs.getBoolean("finished");
+            List<Game> Games = GameDao.getAllGames();
+            for (int i = 0; i<Games.size(); i++)
+            {
+            	Game temp = Games.get(i);
     	            %>
-	<li style="margin-left: 40px;"><%= "Игра " + gameId + ", Закончена: " + finished %></li>
+	<li style="margin-left: 40px;"><%= "Игра " + temp.getId() + ", Закончена: " + temp.getFinished() + ". Очков набрано: " + temp.getScore() +". Игравший: " + UserDao.getUserById(temp.getPlayer_id()).getName() + ". (id = " + temp.getPlayer_id() +")." %></li>
 	<% } %>
 </ul>
 
