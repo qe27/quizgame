@@ -26,9 +26,9 @@
             </button> 
         </form>
         <br>
-        <p>
+        <h1>
             <b><font size="6" >Рейтинг</font></b>
-        </p>
+        </h1>
         <br>
             <form method="POST" action="rating">
                 <p>Имя: <input type="text" name="searchString" width="40"></p>
