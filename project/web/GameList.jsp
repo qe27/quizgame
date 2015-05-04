@@ -37,7 +37,7 @@ import = "java.io.IOException,
             Рейтинг
         </button> 
     </form>
-<p>Список игр:</p>
+<h1>Список игр</h1>
 <ul>
             <%
         	final Connection c;

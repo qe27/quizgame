@@ -25,15 +25,12 @@
                 Рейтинг
             </button> 
         </form>
-        <br>
         <h1>
-            <b><font size="6" >Рейтинг</font></b>
+            Рейтинг
         </h1>
-        <br>
-            <form method="POST" action="rating">
-                <p>Имя: <input type="text" name="searchString" width="40"></p>
-            </form>
-        <br>
+        <form method="POST" action="rating">
+            <p>Имя: <input type="text" name="searchString" width="40"></p>
+        </form>
         <table border="1" width="600">
         <tr>
             <th>Имя</th>
