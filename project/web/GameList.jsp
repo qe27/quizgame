@@ -41,7 +41,7 @@ import = "java.io.IOException,
             Рейтинг
         </button> 
     </form>
-<p>Список игр:</p>
+<h1>Список игр</h1>
 <ul>
             <%
             List<Game> Games = GameDao.getAllGames();
