@@ -49,7 +49,12 @@ pageEncoding="utf-8"%>
             {
             	Game temp = Games.get(i);
     	            %>
-	<li style="margin-left: 40px;"><%= "Игра " + temp.getId() + ", Закончена: " + temp.getFinished() + ". Очков набрано: " + temp.getScore() +". Игравший: " + UserDao.getUserById(temp.getPlayer_id()).getName() + ". (id = " + temp.getPlayer_id() +")." %></li>
+                    <li style="margin-left: 40px;">
+                    <b><%=UserDao.getUserById(temp.getPlayer_id()).getName()%></b><br>
+                    <%=temp.getScore()%> очков <br>
+                    <% if (temp.getFinished()) %> <font color="green"> закончена </font>
+                    <% ; %>
+                    </li>
 	<% } %>
 </ul>
 

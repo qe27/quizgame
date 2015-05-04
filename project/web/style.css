@@ -53,7 +53,13 @@ strong {
 }
 li {
     color: #900;
-    font-style: italic;
+    font-size: medium;
+    list-style-type: none;
+    margin: 0.5em;
+    margin-right: 2cm;
+    border-radius: 4px;
+    border: 2px solid orange;
+    background: #F5F6E9;
 }
 table {
     text-align: center;
