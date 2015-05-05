@@ -31,6 +31,7 @@ public class QuestionDao {
         ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
         connection = ds.getConnection();
     }
+    
     public void updateQuestion(Question question) {
         try {
             connectToDatabase();
@@ -40,13 +41,13 @@ public class QuestionDao {
                 "answers = '" + question.getAnswers() + "', " + 
                 "correct_answer = " + question.getCorrectAnswer() + ", " + 
                 "difficulty = " + question.getDifficulty() + 
-                " where id = " + question.getId()));
-            statement.close();
+                " where id = " + question.getId()));           
         } catch (Exception ex) {
             Logger.getLogger(QuestionDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         finally {
             try {
+                statement.close();
                 if(connection != null) 
                     connection.close();
             } catch (SQLException ex) {
@@ -63,12 +64,12 @@ public class QuestionDao {
                 "'" + question.getQuestion() + "', " + 
                 "'" + question.getAnswers() + "', " + 
                 question.getCorrectAnswer() + ", " + 
-                question.getDifficulty() + ")"));
+                question.getDifficulty() + ")"));              
         } catch (Exception ex) {
             Logger.getLogger(QuestionDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         finally {
-            try {
+            try {   
                 statement.close();
                 if(connection != null) 
                     connection.close();
@@ -77,6 +78,7 @@ public class QuestionDao {
             }
         }
     }
+    
     public Question getQuestion(int id) {
         try {
             connectToDatabase();
@@ -88,6 +90,7 @@ public class QuestionDao {
             String answers = resultSet.getString("answers");
             int correctAnswer = resultSet.getInt("correct_answer");
             int difficulty = resultSet.getInt("difficulty");
+            resultSet.close();
             return new Question(id, question, answers, correctAnswer, difficulty);
         } catch (Exception ex) {
             Logger.getLogger(QuestionDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -103,4 +106,18 @@ public class QuestionDao {
             }
         }
     }
+     
+    public static int getQuantity() throws NamingException, SQLException {
+        connectToDatabase();
+        statement = connection.createStatement();
+        ResultSet resultSet=statement.executeQuery("select count(*) cnt from questions");
+        resultSet.next();
+        int i=resultSet.getInt("cnt");
+        resultSet.close();
+        statement.close();
+        connection.close();
+        return i;
+    }
+    
 }
+

@@ -1,42 +1,57 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" import = "java.util.*, java.io.*, java.sql.*,
-        javax.sql.*, javax.sql.servlet.http.*, javax.naming.InitialContext, 
+<%@page contentType="text/html" pageEncoding="windows-1251" import = "java.util.*, java.io.*, java.sql.*,
+        javax.sql.*, javax.naming.InitialContext, 
         ru.quizgame.entityclasses.User, ru.quizgame.daoclasses.UserDao,         
         ru.quizgame.daoclasses.GameDao" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Р РµР№С‚РёРЅРі</title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Рейтинг</title>
     </head>
     <body>
         <form action="index.jsp">
-            <button type="submit" name="game">
-                Р“Р»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р°
-            </button> 
+                  <button type="submit" name="game">
+                      <i>
+                      <FONT>
+                       Главная страница</FONT> 
+                      </i>
+                  </button> 
         </form>
-         <form action="GameList.jsp">
-            <button type="submit" name="game">
-                РЎРїРёСЃРѕРє РёРіСЂ
-            </button> 
+
+        <form action="GameList.jsp">
+                  <button type="submit" name="game">
+                      <i>
+                      <FONT>
+                       Список игр</FONT> 
+                      </i>
+                  </button> 
         </form>
+
         <form action="rating">
-            <button type="submit" name="game">
-                Р РµР№С‚РёРЅРі
-            </button> 
+                  <button type="submit" name="game">
+                      <i>
+                      <FONT>
+                       Рейтинг</FONT> 
+                      </i>
+                  </button> 
         </form>
-        <h1>
-            Р РµР№С‚РёРЅРі
-        </h1>
-        <form method="POST" action="rating">
-            <p>РРјСЏ: <input type="text" name="searchString" width="40"></p>
-        </form>
+        <br>
+        <p>
+            <b><font size="24" >Рейтинг</font></b>
+        </p>
+        <br>
+        <p>
+            <form method="POST" action="rating">Имя: <input type="text" name="searchString" width="40">
+            </form>
+        </p>
+        <br>
+        <p>
         <table border="1" width="600">
         <tr>
-            <th>РРјСЏ</th>
-            <th>РћС‡РєРё</th>
-            <th>РџСЂР°РІРёР»СЊРЅС‹С… РѕС‚РІРµС‚РѕРІ</th>
-            <th>РЎС‹РіСЂР°РЅРѕ РёРіСЂ</th>
+            <th>Имя</th>
+            <th>Очки</th>
+            <th>Правильных ответов</th>
+            <th>Сыграно игр</th>
         </tr>
         
         <%
@@ -75,5 +90,6 @@
             }
         %>
         </table>
+        </p>
     </body>
 </html>

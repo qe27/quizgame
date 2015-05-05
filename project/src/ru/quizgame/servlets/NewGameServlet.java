@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,8 +20,10 @@ import ru.quizgame.entityclasses.Game;
 import ru.quizgame.entityclasses.User;
 public class NewGameServlet extends HttpServlet {
 	
-	private void CreateGame (HttpServletRequest request, HttpServletResponse response) throws NamingException, SQLException {
-		String name = request.getParameter("name");
+	private void CreateGame (HttpServletRequest request, HttpServletResponse response) throws NamingException, 
+         SQLException,UnsupportedEncodingException {
+		request.setCharacterEncoding("Cp1251");
+                String name = request.getParameter("name");
 		int id = 0;
 		if (name != null) {
 			try { 
@@ -41,7 +44,7 @@ public class NewGameServlet extends HttpServlet {
 		return;
 	}
 	
-	private int findLastGameId() throws NamingException, SQLException {
+	public static int findLastGameId() throws NamingException, SQLException {
 		final Connection c;
 		final Statement stmt;
 		int id;
@@ -59,6 +62,7 @@ public class NewGameServlet extends HttpServlet {
 			ResultSet rs = stmt.executeQuery( "select count(id) from games");
 			rs.next();
 			id = rs.getInt("count");
+                        rs.close();
 			stmt.close();
 			c.close();
 		return id+1;
@@ -82,6 +86,7 @@ public class NewGameServlet extends HttpServlet {
 			ResultSet rs = stmt.executeQuery( "select count(id) from users");
 			rs.next();
 			id = rs.getInt("count");
+                        rs.close();
 			stmt.close();
 			c.close();
 		return id+1;
@@ -96,7 +101,7 @@ public class NewGameServlet extends HttpServlet {
 		try {
 			CreateGame(request, response);
 			getServletContext().getRequestDispatcher(
-			        response.encodeRedirectURL("/Game.jsp")).forward(request, response);
+			        response.encodeRedirectURL("/game.jsp")).forward(request, response);
 		} catch (NamingException e) {
 			getServletContext().getRequestDispatcher(
 			        response.encodeRedirectURL("/nameEx")).forward(request, response);

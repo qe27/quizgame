@@ -12,7 +12,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
@@ -39,7 +38,8 @@ import ru.quizgame.entityclasses.User;
 @WebServlet("/rating")
 public class RatingServlet extends HttpServlet{
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {    
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
+        request.setCharacterEncoding("Cp1251");
         request.setAttribute("searchString", request.getParameter("searchString"));
         getServletContext().getRequestDispatcher(
         response.encodeRedirectURL("/rating.jsp")).forward(request, response);

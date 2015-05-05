@@ -1,22 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    
     <servlet>
-        <servlet-name>Ser</servlet-name>
-        <servlet-class>ru.quizgame.servlets.Ser</servlet-class>
+        <servlet-name>AddQuesServlet</servlet-name>
+        <servlet-class>ru.quizgame.servlets.AddQuesServlet</servlet-class>
     </servlet>
-      <servlet-mapping>
-        <servlet-name>Ser</servlet-name>
-        <url-pattern>/Ser</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>GameServlet</servlet-name>
+        <servlet-class>ru.quizgame.servlets.GameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewGameServlet</servlet-name>
+        <servlet-class>ru.quizgame.servlets.NewGameServlet</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>RatingServlet</servlet-name>
         <servlet-class>ru.quizgame.servlets.RatingServlet</servlet-class>
     </servlet>
-
+    
     <servlet-mapping>
-        <servlet-name>RatingServlet</servlet-name>
-        <url-pattern>/servlet/RatingServlet</url-pattern>
+        <servlet-name>AddQuesServlet</servlet-name>
+        <url-pattern>/AddQuesServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GameServlet</servlet-name>
+        <url-pattern>/GameServlet</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>NewGameServlet</servlet-name>
+        <url-pattern>/NewGameServlet</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>RatingServlet</servlet-name>
+        <url-pattern>/RatingServlet</url-pattern>
+    </servlet-mapping>
+<<<<<<< 589383b7c047cf2652e69c5faae0f633f6e362fc
 
 
 	 <servlet>
@@ -32,5 +50,11 @@
      <welcome-file-list>
        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+=======
+>>>>>>> da5fd79bfdc9be3c69adf9f2f2951f359622d174
     
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

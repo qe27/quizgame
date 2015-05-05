@@ -1,47 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-import = "java.io.IOException,
-                                    java.sql.DriverManager,
-                                    java.sql.Connection,
-                                    java.sql.ResultSet,
-                                    java.sql.SQLException,
-                                    java.sql.Statement,
-                                    javax.naming.InitialContext,
-                                    javax.servlet.ServletException,
-                                    javax.servlet.annotation.WebServlet,
-                                    javax.servlet.http.HttpServlet,
-                                    javax.servlet.http.HttpServletRequest,
-                                    javax.servlet.http.HttpServletResponse,
+<%@ page language="java" contentType="text/html"
+import = "java.io.IOException,                                   
                                     java.util.Iterator,
                                     java.util.List,
                                     ru.quizgame.daoclasses.*,
-                                    ru.quizgame.entityclasses.*,
-                                    javax.sql.DataSource"
-   
-pageEncoding="utf-8"%>
+                                    ru.quizgame.entityclasses.*"
+                             
+    pageEncoding="Windows-1251"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>РРіСЂС‹</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Игры</title>
 </head>
 <body>
     <form action="index.jsp">
         <button type="submit" name="game">
-            Р“Р»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р°
+            Главная страница
         </button> 
     </form>
      <form action="NewGame.jsp">
         <button type="submit" name="game">
-            РќР°С‡Р°С‚СЊ РёРіСЂСѓ
+            Начать игру
         </button> 
     </form>
     <form action="rating">
         <button type="submit" name="game">
-            Р РµР№С‚РёРЅРі
+            Рейтинг
         </button> 
     </form>
-<h1>РЎРїРёСЃРѕРє РёРіСЂ</h1>
+<p>Список игр:</p>
 <ul>
             <%
             List<Game> Games = GameDao.getAllGames();
@@ -49,12 +36,7 @@ pageEncoding="utf-8"%>
             {
             	Game temp = Games.get(i);
     	            %>
-                    <li style="margin-left: 40px;">
-                    <b><%=UserDao.getUserById(temp.getPlayer_id()).getName()%></b><br>
-                    <%=temp.getScore()%> РѕС‡РєРѕРІ <br>
-                    <% if (temp.getFinished()) %> <font color="green"> Р·Р°РєРѕРЅС‡РµРЅР° </font>
-                    <% ; %>
-                    </li>
+	<li><%= "Игра " + temp.getId() + ", Закончена: " + temp.getFinished() + ". Очков набрано: " + temp.getScore() +". Игравший: " + UserDao.getUserById(temp.getPlayer_id()).getName() + ". (id = " + temp.getPlayer_id() +")." %></li>
 	<% } %>
 </ul>
 

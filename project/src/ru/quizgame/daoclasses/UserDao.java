@@ -1,6 +1,5 @@
 package ru.quizgame.daoclasses;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -32,6 +31,7 @@ public class UserDao {
                             user.setName(name);
                             list.add(user);
                         }
+                        rs.close();
 			stmt.close();
 			c.close();
 			return list;
@@ -53,6 +53,7 @@ public class UserDao {
 			String name = rs.getString("name");
 			user.setId(Id1);
 			user.setName(name);
+                        rs.close();
 			stmt.close();
 			c.close();
 			return user;
@@ -73,7 +74,8 @@ public class UserDao {
     			int Id1 = rs.getInt("id");
     			String name1 = rs.getString("name");
     			user.setId(Id1);
-    			user.setName(name);
+    			user.setName(name1);
+                        rs.close();
     			stmt.close();
     			c.close();
     			return user;
@@ -95,6 +97,7 @@ public class UserDao {
 			User user = new User();
 			rs.next();
 			int result = rs.getInt("points");
+                        rs.close();
 			stmt.close();
 			c.close();
 			return result;
@@ -116,6 +119,7 @@ public class UserDao {
                         "and games.id = pairs.game_id");
 			rs.next();
 			int result = rs.getInt("ans");
+                        rs.close();
 			stmt.close();
 			c.close();
 			return result;
@@ -137,6 +141,7 @@ public class UserDao {
                         " and is_correct");
 			rs.next();
 			int result = rs.getInt("ans");
+                        rs.close();
 			stmt.close();
 			c.close();
 			return result;
