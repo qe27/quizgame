@@ -6,8 +6,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    
-       
     <%! int quantity=GameServlet.countQuestionsInGame;%> 
     <%! Integer q[]=new Integer[quantity];%>
     <%
@@ -45,6 +43,7 @@
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Игра "Викторина"</title>
+            <link rel="stylesheet" type="text/css" href="style.css" />
         </head>
 
             Очки <%=GameServlet.score%>

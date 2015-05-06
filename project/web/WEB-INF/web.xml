@@ -34,8 +34,6 @@
         <servlet-name>RatingServlet</servlet-name>
         <url-pattern>/RatingServlet</url-pattern>
     </servlet-mapping>
-<<<<<<< 589383b7c047cf2652e69c5faae0f633f6e362fc
-
 
 	 <servlet>
         <servlet-name>NewGameServlet</servlet-name>
@@ -50,10 +48,6 @@
      <welcome-file-list>
        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-=======
->>>>>>> da5fd79bfdc9be3c69adf9f2f2951f359622d174
-    
-
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

@@ -1,33 +1,38 @@
-<%@ page language="java" contentType="text/html"   
-    pageEncoding="windows-1251"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"   
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Èãðû</title>
+<title>Ð˜Ð³Ñ€Ñ‹</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-<form action="index.jsp">
-    <button type="submit" name="game">
-        Ãëàâíàÿ ñòðàíèöà
-    </button> 
-</form>
- <form action="GameList.jsp">
-    <button type="submit" name="game">
-        Ñïèñîê èãð
-    </button> 
-</form>
-<form action="rating">
-    <button type="submit" name="game">
-        Ðåéòèíã
-    </button> 
-</form>
+    <form action="index.jsp">
+        <button type="submit" name="game">
+            Ð“Ð»Ð°Ð²Ð½Ð°Ñ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°
+        </button> 
+    </form>
+     <form action="GameList.jsp">
+        <button type="submit" name="game">
+            Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¸Ð³Ñ€
+        </button> 
+    </form>
+    <form action="rating">
+        <button type="submit" name="game">
+            Ð ÐµÐ¹Ñ‚Ð¸Ð½Ð³
+        </button> 
+    </form>   
+    <form action="addQues.jsp">
+        <button type="submit" name="game">
+            Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð²Ð¾Ð¿Ñ€Ð¾Ñ
+        </button> 
+    </form>
 <form name="test" method="post" action="NewGameServlet">
-  <p><b>Âàøå èìÿ:</b><br>
+  <p><b>Ð’Ð°ÑˆÐµ Ð¸Ð¼Ñ:</b><br>
    <input type="text" name = "name" size="40">
   </p>
-  <p><button type="submit">Ñîçäàòü èãðó</button>
+  <p><button type="submit">Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð¸Ð³Ñ€Ñƒ</button>
  </form>
 
 </body>

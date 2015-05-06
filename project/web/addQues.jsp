@@ -11,10 +11,30 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Игра "Викторина"</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     
     <body>    
-        <br><br><br><br><br><br><br><br>
+        <form action="index.jsp">
+            <button type="submit" name="game">
+                Главная страница
+            </button> 
+        </form>
+         <form action="GameList.jsp">
+            <button type="submit" name="game">
+                Список игр
+            </button> 
+        </form>
+        <form action="rating">
+            <button type="submit" name="game">
+                Рейтинг
+            </button> 
+        </form>   
+        <form action="addQues.jsp">
+            <button type="submit" name="game">
+                Добавить вопрос
+            </button> 
+        </form>
  
         <h2>Добавьте вопрос и варианты ответов</h2>
         <form action="AddQuesServlet" method="post">
