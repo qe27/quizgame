@@ -2,50 +2,38 @@
         javax.sql.*, javax.naming.InitialContext, 
         ru.quizgame.entityclasses.User, ru.quizgame.daoclasses.UserDao,         
         ru.quizgame.daoclasses.GameDao" %>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>Рейтинг</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
         <form action="index.jsp">
-                  <button type="submit" name="game">
-                      <i>
-                      <FONT>
-                       Главная страница</FONT> 
-                      </i>
-                  </button> 
+            <button type="submit" name="game">
+                Главная страница
+            </button> 
         </form>
-
-        <form action="GameList.jsp">
-                  <button type="submit" name="game">
-                      <i>
-                      <FONT>
-                       Список игр</FONT> 
-                      </i>
-                  </button> 
+         <form action="GameList.jsp">
+            <button type="submit" name="game">
+                Список игр
+            </button> 
         </form>
-
         <form action="rating">
-                  <button type="submit" name="game">
-                      <i>
-                      <FONT>
-                       Рейтинг</FONT> 
-                      </i>
-                  </button> 
+            <button type="submit" name="game">
+                Рейтинг
+            </button> 
         </form>
         <br>
         <p>
-            <b><font size="24" >Рейтинг</font></b>
+            <b><font size="6" >Рейтинг</font></b>
         </p>
         <br>
-        <p>
-            <form method="POST" action="rating">Имя: <input type="text" name="searchString" width="40">
+            <form method="POST" action="rating">
+                <p>Имя: <input type="text" name="searchString" width="40"></p>
             </form>
-        </p>
         <br>
-        <p>
         <table border="1" width="600">
         <tr>
             <th>Имя</th>
@@ -77,7 +65,6 @@
                 </tr>              
                 <%  }
                 }    
-                stmt.close();
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
@@ -90,6 +77,5 @@
             }
         %>
         </table>
-        </p>
     </body>
 </html>
