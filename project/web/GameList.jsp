@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@page import="ru.quizgame.daoclasses.GameDao"%>
+<%@ page language="java" contentType="text/html;"
 import = "java.io.IOException,
                                     java.sql.DriverManager,
                                     java.sql.Connection,
@@ -17,36 +18,36 @@ import = "java.io.IOException,
                                     ru.quizgame.entityclasses.*,
                                     javax.sql.DataSource"
    
-pageEncoding="utf-8"%>
+pageEncoding="windows-1251"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ð˜Ð³Ñ€Ñ‹</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Èãðû</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
     <form action="index.jsp">
         <button type="submit" name="game">
-            Ð“Ð»Ð°Ð²Ð½Ð°Ñ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°
+            Ãëàâíàÿ ñòðàíèöà
         </button> 
     </form>
      <form action="NewGame.jsp">
         <button type="submit" name="game">
-            ÐÐ°Ñ‡Ð°Ñ‚ÑŒ Ð¸Ð³Ñ€Ñƒ
+            Íà÷àòü èãðó
         </button> 
     </form>
     <form action="rating">
         <button type="submit" name="game">
-            Ð ÐµÐ¹Ñ‚Ð¸Ð½Ð³
+            Ðåéòèíã
         </button> 
     </form>
     <form action="addQues.jsp">
         <button type="submit" name="game">
-            Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð²Ð¾Ð¿Ñ€Ð¾Ñ
+            Äîáàâèòü âîïðîñ
         </button> 
     </form>
-<h1>Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¸Ð³Ñ€</h1>
+<h1>Ñïèñîê èãð</h1>
 <ul>
             <%
             List<Game> Games = GameDao.getAllGames();
@@ -56,10 +57,10 @@ pageEncoding="utf-8"%>
     	            %>
                     <li style="margin-left: 40px;">
                     <b><%=UserDao.getUserById(temp.getPlayer_id()).getName()%></b><br>
-                    <%=temp.getScore()%> Ð¾Ñ‡ÐºÐ¾Ð² <br>
-                    <% if (temp.getFinished()) %> <font color="green"> Ð·Ð°ÐºÐ¾Ð½Ñ‡ÐµÐ½Ð° </font>
+                    <%=temp.getScore()%> î÷êîâ <br>
+                    <% if (temp.getFinished()) %> <font color="green"> çàêîí÷åíà </font>
                     <% ; %>
-                    <% if (!temp.getFinished()) %> Ð½Ðµ Ð·Ð°ÐºÐ¾Ð½Ñ‡ÐµÐ½Ð°
+                    <% if (!temp.getFinished()) %> íå çàêîí÷åíà
                     <% ; %>
                     </li>
 	<% } %>

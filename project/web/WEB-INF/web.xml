@@ -34,20 +34,8 @@
         <servlet-name>RatingServlet</servlet-name>
         <url-pattern>/RatingServlet</url-pattern>
     </servlet-mapping>
+    
 
-	 <servlet>
-        <servlet-name>NewGameServlet</servlet-name>
-        <servlet-class>ru.quizgame.servlets.NewGameServlet</servlet-class>
-    </servlet>
-      <servlet-mapping>
-        <servlet-name>NewGameServlet</servlet-name>
-        <url-pattern>/NewGameServlet</url-pattern>
-    </servlet-mapping>
-
-
-     <welcome-file-list>
-       <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

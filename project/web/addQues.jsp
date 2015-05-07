@@ -1,73 +1,67 @@
 <%-- 
     Document   : addQues
     Created on : 11.04.2015, 15:29:07
-    Author     : Гоша
+    Author     : Р“РѕС€Р°
 --%>
 
 
-<%@page contentType="text/html" pageEncoding="windows-1251"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Игра "Викторина"</title>
+        <title>РРіСЂР° "Р’РёРєС‚РѕСЂРёРЅР°"</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     
     <body>    
         <form action="index.jsp">
             <button type="submit" name="game">
-                Главная страница
+                Р“Р»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р°
             </button> 
         </form>
          <form action="GameList.jsp">
             <button type="submit" name="game">
-                Список игр
+                РЎРїРёСЃРѕРє РёРіСЂ
             </button> 
         </form>
         <form action="rating">
             <button type="submit" name="game">
-                Рейтинг
+                Р РµР№С‚РёРЅРі
             </button> 
         </form>   
         <form action="addQues.jsp">
             <button type="submit" name="game">
-                Добавить вопрос
+                Р”РѕР±Р°РІРёС‚СЊ РІРѕРїСЂРѕСЃ
             </button> 
         </form>
  
-        <h2>Добавьте вопрос и варианты ответов</h2>
+        <h1>Р”РѕР±Р°РІСЊС‚Рµ РІРѕРїСЂРѕСЃ Рё РІР°СЂРёР°РЅС‚С‹ РѕС‚РІРµС‚РѕРІ</h1>
         <form action="AddQuesServlet" method="post">
-            <table border="1" cellpadding=0>
-
-                <td>Вопрос <br>
-                    &nbsp;  <textarea name="ques" rows="2" cols="45"></textarea><br>
-                Варианты ответа<br>
-                1<input type="text" name="a1" size="70"><br>
-                2<input type="text" name="a2" size="70"><br>
-                3<input type="text" name="a3" size="70"><br>
-                4<input type="text" name="a4" size="70"><br>
-                &nbsp; Введите № правильного ответа <input type="text" name="ta" size="1"><br>
-                &nbsp;&nbsp;Оцените сложность вопроса <input type="text" name="dif" size="2">
-                &nbsp;&nbsp;
-                </td>
-            </table>
+            
+                <p>Р’РѕРїСЂРѕСЃ <br>
+                <textarea name="ques" rows="2" cols="45"></textarea><br>
+                Р’Р°СЂРёР°РЅС‚С‹ РѕС‚РІРµС‚Р°<br>
+                1) <input type="text" name="a1" size="70"><br>
+                2) <input type="text" name="a2" size="70"><br>
+                3) <input type="text" name="a3" size="70"><br>
+                4) <input type="text" name="a4" size="70"><br>
+                Р’РІРµРґРёС‚Рµ в„– РїСЂР°РІРёР»СЊРЅРѕРіРѕ РѕС‚РІРµС‚Р° <input type="text" name="ta" size="1"><br>
+                РћС†РµРЅРёС‚Рµ СЃР»РѕР¶РЅРѕСЃС‚СЊ РІРѕРїСЂРѕСЃР° <input type="text" name="dif" size="2">
+                </p>
+                
             <br>
             
             <table>
                 <tr>                 
                     <button type="submit" name="back">
-                              <i>
-                              <FONT SIZE=4 FACE="Arial" WIDTH="5">Назад</FONT> 
-                              </i>
+                        РќР°Р·Р°Рґ
                     </button> 
 
                 </tr>
                 <tr>
                     <button type="submit" name="addq">
-                              <i>
-                              <FONT SIZE=4 FACE="Arial" WIDTH="5">Добавить</FONT> 
-                              </i>
+                        Р”РѕР±Р°РІРёС‚СЊ
                     </button> 
                 </tr>            
             </table>

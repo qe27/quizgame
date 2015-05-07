@@ -36,21 +36,20 @@
     GameServlet.game_id=game_id;%>
                 
 
-    <body>
-            
-        game_id <%=game_id%>
-        <br>    
+    <body>   
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Игра "Викторина"</title>
             <link rel="stylesheet" type="text/css" href="style.css" />
         </head>
-
+        <h3>
+            Игра #<%=game_id%> <br><br>
             Очки <%=GameServlet.score%>
-        <br><br><br><br><br><br><br><br>
-        <h2> Вопрос <%=numberQ%> </h2>
-        <li><FONT SIZE=7 FACE="Comic Sans" WIDTH="2"><%=question%></FONT>
-        </li>
+        </h3>
+        <h1> Вопрос <%=numberQ%> </h1>
+        <h3>
+            <%=question%>
+        </h3>
    
             <form action="GameServlet" method="post">
                 
@@ -60,15 +59,11 @@
                     <input type="radio" name="answer" value="4"/><%=answers[3]%> <br>
                 </p>
                 <button type="submit" name="next">
-                      <i>
-                      <FONT SIZE=4 FACE="Arial" WIDTH="5">Далее</FONT> 
-                      </i>
+                      Далее
                 </button>
                 <br>
                 <button type="submit" name="back">
-                      <i>
-                      <FONT SIZE=4 FACE="Arial" WIDTH="5">Прервать игру</FONT> 
-                      </i>
+                    Прервать игру
                 </button> 
 
             </form>
