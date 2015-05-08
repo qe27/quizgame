@@ -1,38 +1,38 @@
 <%@ page language="java" contentType="text/html"   
-    pageEncoding="windows-1251"%>
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Èãðû</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Ð˜Ð³Ñ€Ñ‹</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
     <form action="index.jsp">
         <button type="submit" name="game">
-            Ãëàâíàÿ ñòðàíèöà
+            Ð“Ð»Ð°Ð²Ð½Ð°Ñ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°
         </button> 
     </form>
      <form action="GameList.jsp">
         <button type="submit" name="game">
-            Ñïèñîê èãð
+            Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¸Ð³Ñ€
         </button> 
     </form>
     <form action="rating">
         <button type="submit" name="game">
-            Ðåéòèíã
+            Ð ÐµÐ¹Ñ‚Ð¸Ð½Ð³
         </button> 
     </form>   
     <form action="addQues.jsp">
         <button type="submit" name="game">
-            Äîáàâèòü âîïðîñ
+            Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð²Ð¾Ð¿Ñ€Ð¾Ñ
         </button> 
     </form>
 <form name="test" method="post" action="NewGameServlet">
-  <p><b>Âàøå èìÿ </b>(íå áîëåå 20 ñèìâîëîâ, ðóññêèå è àíãëèéñêèå áóêâû):<br>
+  <p><b>Ð’Ð°ÑˆÐµ Ð¸Ð¼Ñ </b>(Ð½Ðµ Ð±Ð¾Ð»ÐµÐµ 20 ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð², Ñ€ÑƒÑÑÐºÐ¸Ðµ Ð¸ Ð°Ð½Ð³Ð»Ð¸Ð¹ÑÐºÐ¸Ðµ Ð±ÑƒÐºÐ²Ñ‹):<br>
    <input type="text" name = "name" size="40">
   </p>
-  <p><button type="submit">Ñîçäàòü èãðó</button>
+  <p><button type="submit">Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð¸Ð³Ñ€Ñƒ</button>
  </form>
 
 </body>

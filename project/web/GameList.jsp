@@ -18,36 +18,36 @@ import = "java.io.IOException,
                                     ru.quizgame.entityclasses.*,
                                     javax.sql.DataSource"
    
-pageEncoding="windows-1251"%>
+pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Игры</title>
+<title>РРіСЂС‹</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
     <form action="index.jsp">
         <button type="submit" name="game">
-            Главная страница
+            Р“Р»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р°
         </button> 
     </form>
      <form action="NewGame.jsp">
         <button type="submit" name="game">
-            Начать игру
+            РќР°С‡Р°С‚СЊ РёРіСЂСѓ
         </button> 
     </form>
     <form action="rating">
         <button type="submit" name="game">
-            Рейтинг
+            Р РµР№С‚РёРЅРі
         </button> 
     </form>
     <form action="addQues.jsp">
         <button type="submit" name="game">
-            Добавить вопрос
+            Р”РѕР±Р°РІРёС‚СЊ РІРѕРїСЂРѕСЃ
         </button> 
     </form>
-<h1>Список игр</h1>
+<h1>РЎРїРёСЃРѕРє РёРіСЂ</h1>
 <ul>
             <%
             List<Game> Games = GameDao.getAllGames();
@@ -57,10 +57,10 @@ pageEncoding="windows-1251"%>
     	            %>
                     <li style="margin-left: 40px;">
                     <b><%=UserDao.getUserById(temp.getPlayer_id()).getName()%></b><br>
-                    <%=temp.getScore()%> очков <br>
-                    <% if (temp.getFinished()) %> <font color="green"> закончена </font>
+                    <%=temp.getScore()%> РѕС‡РєРѕРІ <br>
+                    <% if (temp.getFinished()) %> <font color="green"> Р·Р°РєРѕРЅС‡РµРЅР° </font>
                     <% ; %>
-                    <% if (!temp.getFinished()) %> не закончена
+                    <% if (!temp.getFinished()) %> РЅРµ Р·Р°РєРѕРЅС‡РµРЅР°
                     <% ; %>
                     </li>
 	<% } %>

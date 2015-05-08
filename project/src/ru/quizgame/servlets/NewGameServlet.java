@@ -9,6 +9,8 @@ import javax.sql.DataSource;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import static java.nio.charset.StandardCharsets.ISO_8859_1;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,8 +26,8 @@ public class NewGameServlet extends HttpServlet {
 	boolean ok;
 	private void CreateGame (HttpServletRequest request, HttpServletResponse response) throws NamingException, 
          SQLException,UnsupportedEncodingException {
-		request.setCharacterEncoding("Cp1251");
-                String name = request.getParameter("name");
+		//request.setCharacterEncoding("Cp1251");
+                String name = new String(request.getParameter("name").getBytes(ISO_8859_1), UTF_8);
                 Pattern pattern = Pattern.compile("\\p{L}+");
                 Matcher matcher = pattern.matcher(name);
                 ok = matcher.matches() && name.length() <= 20;
