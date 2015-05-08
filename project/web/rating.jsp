@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="windows-1251" import = "java.util.*, java.io.*, java.sql.*,
+<%@page language="java" contentType="text/html" pageEncoding="UTF-8" import = "java.util.*, java.io.*, java.sql.*,
         javax.sql.*, javax.naming.InitialContext, 
         ru.quizgame.entityclasses.User, ru.quizgame.daoclasses.UserDao,         
         ru.quizgame.daoclasses.GameDao" %>
@@ -6,42 +6,42 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Рейтинг</title>
+        <title>Р РµР№С‚РёРЅРі</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
         <form action="index.jsp">
             <button type="submit" name="game">
-                Главная страница
+                Р“Р»Р°РІРЅР°СЏ СЃС‚СЂР°РЅРёС†Р°
             </button> 
         </form>
          <form action="GameList.jsp">
             <button type="submit" name="game">
-                Список игр
+                РЎРїРёСЃРѕРє РёРіСЂ
             </button> 
         </form>
         <form action="rating">
             <button type="submit" name="game">
-                Рейтинг
+                Р РµР№С‚РёРЅРі
             </button> 
         </form>   
         <form action="addQues.jsp">
             <button type="submit" name="game">
-                Добавить вопрос
+                Р”РѕР±Р°РІРёС‚СЊ РІРѕРїСЂРѕСЃ
             </button> 
         </form>
         <h1>
-            Рейтинг
+            Р РµР№С‚РёРЅРі
         </h1>
         <form method="POST" action="rating">
-            <p>Имя: <input type="text" name="searchString" width="40"></p>
+            <p>РРјСЏ: <input type="text" name="searchString" width="40"></p>
         </form>
         <table border="1" width="600">
         <tr>
-            <th>Имя</th>
-            <th>Очки</th>
-            <th>Правильных ответов</th>
-            <th>Сыграно игр</th>
+            <th>РРјСЏ</th>
+            <th>РћС‡РєРё</th>
+            <th>РџСЂР°РІРёР»СЊРЅС‹С… РѕС‚РІРµС‚РѕРІ</th>
+            <th>РЎС‹РіСЂР°РЅРѕ РёРіСЂ</th>
         </tr>
         
         <%

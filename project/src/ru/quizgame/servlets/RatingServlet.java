@@ -8,6 +8,7 @@ package ru.quizgame.servlets;
 import java.sql.Statement;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.nio.charset.StandardCharsets.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -31,6 +32,7 @@ import ru.quizgame.entityclasses.Pair;
 import ru.quizgame.entityclasses.Question;
 import ru.quizgame.entityclasses.User;
 
+
 /**
  *
  * @author Борисов
@@ -39,8 +41,9 @@ import ru.quizgame.entityclasses.User;
 public class RatingServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
-        request.setCharacterEncoding("Cp1251");
-        request.setAttribute("searchString", request.getParameter("searchString"));
+        //request.setCharacterEncoding("Cp1251");
+        System.out.println(request.getParameter("searchString"));
+        request.setAttribute("searchString", new String(request.getParameter("searchString").getBytes(ISO_8859_1), UTF_8));
         getServletContext().getRequestDispatcher(
         response.encodeRedirectURL("/rating.jsp")).forward(request, response);
     }

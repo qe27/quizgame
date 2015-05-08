@@ -29,7 +29,7 @@
         </button> 
     </form>
 <form name="test" method="post" action="NewGameServlet">
-  <p><b>Ваше имя:</b><br>
+  <p><b>Ваше имя </b>(не более 20 символов, русские и английские буквы):<br>
    <input type="text" name = "name" size="40">
   </p>
   <p><button type="submit">Создать игру</button>

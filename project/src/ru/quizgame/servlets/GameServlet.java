@@ -30,7 +30,7 @@ public class GameServlet extends HttpServlet {
     public static int question_id;
     public static int order_number;
     public static boolean is_correct;
-    public static int countQuestionsInGame=4;
+    public static int countQuestionsInGame=5;
     
     protected void forward(String address, HttpServletRequest request, HttpServletResponse response)
      throws ServletException, IOException{
