@@ -5,7 +5,7 @@
 --%>
 
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" import = "ru.quizgame.servlets.AddQuesServlet" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -63,10 +63,34 @@
                     <button type="submit" name="addq">
                         Добавить
                     </button> 
-                </tr>            
+                </tr>
+                <%
+                String t = " ";
+                int c = AddQuesServlet.getCorrect();
+                switch (c) {
+                case -1: t=new String("Ошибка. Вопрос не был добавлен!"); break;
+                case 1: t=new String("Вопрос был успешно добавлен."); break;
+                
+                
+                }
+               	if (c==0) {
+                %>  
+                   
+                <% } else {
+                	if (c==1) {
+                		
+                	%>
+                	
+                <%} else %>
+                <h3><%= t %>
+                </h3>
+                <%
+                	
+                }
+                AddQuesServlet.setCorrectNull();
+                %>
             </table>
         </form>
         
     </body>
 </html>
-

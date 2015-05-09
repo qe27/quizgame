@@ -1,4 +1,3 @@
-
 package ru.quizgame.servlets;
 
 import java.io.IOException;
@@ -15,6 +14,13 @@ import ru.quizgame.entityclasses.Question;
 
 public class AddQuesServlet extends HttpServlet {
     
+	static private int correct=0;
+	static public int getCorrect (){
+		return correct;
+	}
+	static public void setCorrectNull () {
+		correct = 0;
+	}
     protected void forward(String address, HttpServletRequest request, HttpServletResponse response)
      throws ServletException, IOException{
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(address);
@@ -44,7 +50,8 @@ public class AddQuesServlet extends HttpServlet {
             Matcher md=pat2.matcher(difficulty);
             if (mq.matches()|m1.matches()|m2.matches()|m3.matches()|m4.matches()|!mt.matches()|
                     !md.matches()){
-                //РѕС€РёР±РєР° РїСЂРё РІРІРѕРґРµ, РѕСЃС‚Р°РµРјСЃСЏ РЅР° С‚РѕР№ Р¶Рµ СЃС‚СЂР°РЅРёС†Рµ 
+                //ошибка при вводе, остаемся на той же странице 
+            	correct=-1;
                 forward("/addQues.jsp", request, response);                
             } else {
                 String answers="1)"+a1+"@2)"+a2+"@3)"+a3+"@4)"+a4+"@"; 
@@ -52,10 +59,12 @@ public class AddQuesServlet extends HttpServlet {
                         Integer.parseInt(difficulty));
                 QuestionDao qd=new QuestionDao();
                 qd.insertQuestion(q);
-                forward("/index.jsp", request, response);        
+                correct = 1;
+                forward("/addQues.jsp", request, response);        
             }
-        } else if (request.getParameter("back")!=null) {           
-            forward("/index.jsp", request, response);
+        } else if (request.getParameter("back")!=null) {      
+        	correct=-1;
+            forward("/addQues.jsp", request, response);
         }      
     }
         
