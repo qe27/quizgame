@@ -42,7 +42,7 @@ public class RatingServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
         //request.setCharacterEncoding("Cp1251");
-        System.out.println(request.getParameter("searchString"));
+        //System.out.println(request.getParameter("searchString"));
         request.setAttribute("searchString", new String(request.getParameter("searchString").getBytes(ISO_8859_1), UTF_8));
         getServletContext().getRequestDispatcher(
         response.encodeRedirectURL("/rating.jsp")).forward(request, response);

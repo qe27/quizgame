@@ -77,12 +77,13 @@ public class GameServlet extends HttpServlet {
                 } catch (NamingException ex) {
                     Logger.getLogger(GameServlet.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                request.setAttribute("points",new Integer(score));
                 i=0;
                 score=0;
-
                 // далее, видимо, должна быть страница с сообщением об окончании игры
                 //пока её нет
-                forward("/index.jsp", request, response);
+                
+                forward("/finish.jsp", request, response);
             }
         }
     }
