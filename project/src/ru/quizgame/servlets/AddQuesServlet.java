@@ -1,6 +1,8 @@
 package ru.quizgame.servlets;
 
 import java.io.IOException;
+import static java.nio.charset.StandardCharsets.ISO_8859_1;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.RequestDispatcher;
@@ -28,14 +30,13 @@ public class AddQuesServlet extends HttpServlet {
     }
     
     public void doPost(HttpServletRequest request, HttpServletResponse response)     
-     throws ServletException, IOException{
-        request.setCharacterEncoding("Cp1251");        
+     throws ServletException, IOException{    
         if (request.getParameter("addq")!=null) {
-            String question=request.getParameter("ques");
-            String a1=request.getParameter("a1");
-            String a2=request.getParameter("a2");
-            String a3=request.getParameter("a3");
-            String a4=request.getParameter("a4"); 
+            String question=new String(request.getParameter("ques").getBytes(ISO_8859_1), UTF_8);;
+            String a1=new String(request.getParameter("a1").getBytes(ISO_8859_1), UTF_8);
+            String a2=new String(request.getParameter("a2").getBytes(ISO_8859_1), UTF_8);
+            String a3=new String(request.getParameter("a3").getBytes(ISO_8859_1), UTF_8);
+            String a4=new String(request.getParameter("a4").getBytes(ISO_8859_1), UTF_8);
             String correctAnswer=request.getParameter("ta");
             String difficulty=request.getParameter("dif");
             Pattern pat=Pattern.compile(" *");
@@ -49,8 +50,7 @@ public class AddQuesServlet extends HttpServlet {
             Pattern pat2=Pattern.compile("[1-9][0-9]{1}");
             Matcher md=pat2.matcher(difficulty);
             if (mq.matches()|m1.matches()|m2.matches()|m3.matches()|m4.matches()|!mt.matches()|
-                    !md.matches()){
-                //ошибка при вводе, остаемся на той же странице 
+                    !md.matches()){ 
             	correct=-1;
                 forward("/addQues.jsp", request, response);                
             } else {

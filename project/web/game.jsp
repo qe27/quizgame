@@ -44,7 +44,6 @@
         </head>
         <h3>
             Игра #<%=game_id%> <br><br>
-            Очки <%=GameServlet.score%>
         </h3>
         <h1> Вопрос <%=numberQ%> </h1>
         <h3>
