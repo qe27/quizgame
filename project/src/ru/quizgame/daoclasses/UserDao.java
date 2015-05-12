@@ -36,7 +36,30 @@ public class UserDao {
 			c.close();
 			return list;
 	}
-        
+        	public static int findLastUserId() throws SQLException, NamingException {
+		final Connection c;
+		final Statement stmt;
+		int id;
+			DataSource ds = null;
+			InitialContext ic;
+			ic = new InitialContext();
+		       ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
+		//	ds = (DataSource) ic.lookup("java:/SampleDS");
+		       
+			//c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+			 //       "admin", "123");
+		//	out.println("Connected");
+		       c=ds.getConnection();
+			stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery( "select count(id) from users");
+			rs.next();
+			id = rs.getInt("count");
+                        rs.close();
+			stmt.close();
+			c.close();
+		return id+1;
+	}
+                
         static public User getUserById (int id) throws SQLException, NamingException {
 		Connection c;
 		Statement stmt;
