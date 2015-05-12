@@ -31,6 +31,7 @@ public class GameServlet extends HttpServlet {
     public static int order_number;
     public static boolean is_correct;
     public static int countQuestionsInGame=5;
+    public boolean finished=false;
     
     protected void forward(String address, HttpServletRequest request, HttpServletResponse response)
      throws ServletException, IOException{
@@ -44,11 +45,19 @@ public class GameServlet extends HttpServlet {
         if (request.getParameter("back")!=null) {
             try {
                     PairDao.deletePair(game_id);
-                } catch (SQLException ex) {
+            } catch (SQLException ex) {
                     Logger.getLogger(GameServlet.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (NamingException ex) {
+            } catch (NamingException ex) {
                     Logger.getLogger(GameServlet.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            }
+            
+            try {
+                    GameDao.updateGame(game_id,score,finished);
+            } catch (SQLException ex) {
+                    Logger.getLogger(GameServlet.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (NamingException ex) {
+                    Logger.getLogger(GameServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }                                   
             i=0;
             score=0;
             forward("/index.jsp", request, response);
@@ -69,9 +78,10 @@ public class GameServlet extends HttpServlet {
             }            
             if (i<countQuestionsInGame) {
                 forward("/game.jsp", request, response);
-            } else {                
+            } else { 
+                finished=true;
                 try {
-                    GameDao.updateGame(game_id, score);
+                    GameDao.updateGame(game_id,score,finished);
                 } catch (SQLException ex) {
                     Logger.getLogger(GameServlet.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (NamingException ex) {
@@ -80,9 +90,7 @@ public class GameServlet extends HttpServlet {
                 request.setAttribute("points",new Integer(score));
                 i=0;
                 score=0;
-                // далее, видимо, должна быть страница с сообщением об окончании игры
-                //пока её нет
-                
+                finished=false;                        
                 forward("/finish.jsp", request, response);
             }
         }

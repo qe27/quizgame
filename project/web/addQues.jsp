@@ -1,11 +1,6 @@
-<%-- 
-    Document   : addQues
-    Created on : 11.04.2015, 15:29:07
-    Author     : Гоша
---%>
 
 
-<%@page contentType="text/html" import = "ru.quizgame.servlets.AddQuesServlet,ru.quizgame.auxiliaryclasses.AddQuesAuxiliary" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" import = "ru.quizgame.servlets.AddQuesServlet" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -46,50 +41,59 @@
                 2) <input type="text" name="a2" size="70"><br>
                 3) <input type="text" name="a3" size="70"><br>
                 4) <input type="text" name="a4" size="70"><br>
-                Введите № правильного ответа <input type="text" name="ta" size="1"><br>
-                Оцените сложность вопроса <input type="text" name="dif" size="2">
+                Введите № правильного ответа(от 1 до 4) <input type="text" name="ta" size="1"><br>
+                Оцените сложность вопроса(от 10 до 100)  <input type="text" name="dif" size="2">
                 </p>
+               
+                <button type="submit" name="addq">
+                    Добавить
+                </button> 
                 
-            <br>
-            
-            <table>
-                <tr>                 
-                    <button type="submit" name="back">
-                        Назад
-                    </button> 
-
-                </tr>
-                <tr>
-                    <button type="submit" name="addq">
-                        Добавить
-                    </button> 
-                </tr>
                 <%
-                String t = " ";
-                int c = AddQuesAuxiliary.getCorrect();
-                switch (c) {
-                case -1: t=new String("Ошибка. Вопрос не был добавлен!"); break;
-                case 1: t=new String("Вопрос был успешно добавлен."); break;
+                String t ="";
+                String s1="";
+                String s2="";
+                String s3="";
+                String s4="";                  
+                int c = AddQuesServlet.correct;              
+                if (c==1) {
+                    t="Вопрос был успешно добавлен.";
+                } else if (c==-1) { 
+                    if (AddQuesServlet.er1==-1) 
+                        s1="Ошибка.Поле для вопроса не заполнено.";
+                    if (AddQuesServlet.er2==-1) 
+                        s2="Ошибка.Необходимо заполнить все поля для вариантов ответа.";
+                    if (AddQuesServlet.er3==-1) 
+                        s3="Ошибка.Не заполнено или неверно указано поле для правильного ответа.";
+                    if (AddQuesServlet.er4==-1) 
+                        s4="Ошибка.Не заполнено или неверно указано поле для сложности вопроса.";
+                } %>
                 
-                
-                }
-               	if (c==0) {
-                %>  
-                   
-                <% } else {
-                	if (c==1) {
-                		
-                	%>
-                	
-                <%} else %>
-                <h3><%= t %>
+                <h3><%=t %>
                 </h3>
+                <h3><%=s1 %>
+                </h3>
+                <h3><%=s2 %>
+                </h3>
+                <h3><%=s3 %>
+                </h3>
+                <h3><%=s4 %>
+                </h3>           
+                
                 <%
-                	
-                }
-                AddQuesAuxiliary.setCorrect(0);
-                %>
-            </table>
+                t ="";
+                s1="";
+                s2="";
+                s3="";
+                s4="";            
+                if (c==-1) {
+                    AddQuesServlet.er1=1;
+                    AddQuesServlet.er2=1;
+                    AddQuesServlet.er3=1;
+                    AddQuesServlet.er4=1;
+                }                   
+                AddQuesServlet.correct=0;%>
+                        
         </form>
         
     </body>

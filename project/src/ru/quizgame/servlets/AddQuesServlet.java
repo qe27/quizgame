@@ -12,12 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import ru.quizgame.daoclasses.QuestionDao;
 import ru.quizgame.entityclasses.Question;
-import ru.quizgame.auxiliaryclasses.AddQuesAuxiliary;
 
 
 public class AddQuesServlet extends HttpServlet {
-
     
+    public static int er1=1;
+    public static int er2=1;
+    public static int er3=1;
+    public static int er4=1;
+    public static int correct=0;
+	
     protected void forward(String address, HttpServletRequest request, HttpServletResponse response)
      throws ServletException, IOException{
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(address);
@@ -42,12 +46,23 @@ public class AddQuesServlet extends HttpServlet {
             Matcher m4=pat.matcher(a4);
             Pattern pat1=Pattern.compile("[1234]");
             Matcher mt=pat1.matcher(correctAnswer);
-            Pattern pat2=Pattern.compile("[1-9][0-9]{1}");
+            Pattern pat2=Pattern.compile("[1-9][0-9]{1}|100");
             Matcher md=pat2.matcher(difficulty);
             if (mq.matches()|m1.matches()|m2.matches()|m3.matches()|m4.matches()|!mt.matches()|
-                    !md.matches()){ 
-            	AddQuesAuxiliary.setCorrect(-1);
-//correct=-1;
+                    !md.matches()){
+                if (mq.matches()){
+                    er1=-1;
+                }
+                if (m1.matches()|m2.matches()|m3.matches()|m4.matches()){
+                    er2=-1;
+                }
+                if (!mt.matches()){
+                    er3=-1;
+                }
+                if (!md.matches()){
+                    er4=-1;
+                }
+                correct=-1;
                 forward("/addQues.jsp", request, response);                
             } else {
                 String answers="1)"+a1+"@2)"+a2+"@3)"+a3+"@4)"+a4+"@"; 
@@ -55,13 +70,10 @@ public class AddQuesServlet extends HttpServlet {
                         Integer.parseInt(difficulty));
                 QuestionDao qd=new QuestionDao();
                 qd.insertQuestion(q);
-                AddQuesAuxiliary.setCorrect(1);
+                correct = 1;
                 forward("/addQues.jsp", request, response);        
             }
-        } else if (request.getParameter("back")!=null) {      
-        	AddQuesAuxiliary.setCorrect(-1);
-            forward("/addQues.jsp", request, response);
-        }      
+        }       
     }
         
 }

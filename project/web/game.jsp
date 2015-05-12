@@ -2,7 +2,7 @@
 <%@page import = "java.util.*, java.io.*, java.sql.*,
         javax.sql.*, javax.naming.InitialContext, 
         ru.quizgame.entityclasses.Question, ru.quizgame.daoclasses.QuestionDao,
-        ru.quizgame.servlets.GameServlet,ru.quizgame.daoclasses.GameDao,ru.quizgame.servlets.NewGameServlet"%>
+        ru.quizgame.servlets.GameServlet,ru.quizgame.servlets.NewGameServlet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,7 @@
     int numberQ = GameServlet.i+1;
     if (numberQ==1)
          q=GameServlet.getQuestions();    
-    int game_id=GameDao.findLastGameId()-1;
+    int game_id=NewGameServlet.findLastGameId()-1;
     %>
      
     <%
@@ -43,7 +43,7 @@
             <link rel="stylesheet" type="text/css" href="style.css" />
         </head>
         <h3>
-            Игра #<%=game_id%> <br><br>
+            Игра #<%=game_id%> <br><br> 
         </h3>
         <h1> Вопрос <%=numberQ%> </h1>
         <h3>
