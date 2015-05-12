@@ -5,7 +5,7 @@
 --%>
 
 
-<%@page contentType="text/html" import = "ru.quizgame.servlets.AddQuesServlet" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" import = "ru.quizgame.servlets.AddQuesServlet,ru.quizgame.auxiliaryclasses.AddQuesAuxiliary" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -66,7 +66,7 @@
                 </tr>
                 <%
                 String t = " ";
-                int c = AddQuesServlet.getCorrect();
+                int c = AddQuesAuxiliary.getCorrect();
                 switch (c) {
                 case -1: t=new String("Ошибка. Вопрос не был добавлен!"); break;
                 case 1: t=new String("Вопрос был успешно добавлен."); break;
@@ -87,7 +87,7 @@
                 <%
                 	
                 }
-                AddQuesServlet.setCorrectNull();
+                AddQuesAuxiliary.setCorrect(0);
                 %>
             </table>
         </form>
