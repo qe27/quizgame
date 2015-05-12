@@ -87,6 +87,30 @@ public class GameDao {
         c.close();
     }
     
+    public static int findLastGameId() throws NamingException, SQLException {
+		final Connection c;
+		final Statement stmt;
+		int id;
+			DataSource ds = null;
+			InitialContext ic;
+			ic = new InitialContext();
+		       ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
+		//	ds = (DataSource) ic.lookup("java:/SampleDS");
+		       
+			//c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
+			 //       "admin", "123");
+		//	out.println("Connected");
+		       c=ds.getConnection();
+			stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery( "select count(id) from games");
+			rs.next();
+			id = rs.getInt("count");
+                        rs.close();
+			stmt.close();
+			c.close();
+		return id+1;
+	}
+
     public static void updateGame(int game_id,int score, boolean finished) throws SQLException, NamingException{
         connectToDatabase();
         stmt = c.createStatement();

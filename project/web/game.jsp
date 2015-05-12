@@ -2,7 +2,7 @@
 <%@page import = "java.util.*, java.io.*, java.sql.*,
         javax.sql.*, javax.naming.InitialContext, 
         ru.quizgame.entityclasses.Question, ru.quizgame.daoclasses.QuestionDao,
-        ru.quizgame.servlets.GameServlet,ru.quizgame.servlets.NewGameServlet"%>
+        ru.quizgame.servlets.GameServlet,ru.quizgame.daoclasses.GameDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,7 @@
     int numberQ = GameServlet.i+1;
     if (numberQ==1)
          q=GameServlet.getQuestions();    
-    int game_id=NewGameServlet.findLastGameId()-1;
+    int game_id=GameDao.findLastGameId()-1;
     %>
      
     <%
