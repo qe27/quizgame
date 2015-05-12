@@ -37,67 +37,19 @@ public class NewGameServlet extends HttpServlet {
 				id = UserDao.getUserByName(name).getId();
 			}
 			catch (SQLException e) {
-					id = findLastUserId();
+					id = UserDao.findLastUserId();
 					User user = new User (id, name);
 					
 						UserDao.insertUser(user);
 			}
 			
-			int gameId = findLastGameId();
+			int gameId = GameDao.findLastGameId();
 			Game game = new Game (gameId, id, 0, false);
 			GameDao.insertGame(game);
 		}
 		return;
 	}
-	
-	public static int findLastGameId() throws NamingException, SQLException {
-		final Connection c;
-		final Statement stmt;
-		int id;
-			DataSource ds = null;
-			InitialContext ic;
-			ic = new InitialContext();
-		       ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
-		//	ds = (DataSource) ic.lookup("java:/SampleDS");
-		       
-			//c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-			 //       "admin", "123");
-		//	out.println("Connected");
-		       c=ds.getConnection();
-			stmt = c.createStatement();
-			ResultSet rs = stmt.executeQuery( "select count(id) from games");
-			rs.next();
-			id = rs.getInt("count");
-                        rs.close();
-			stmt.close();
-			c.close();
-		return id+1;
-	}
-	
-	private int findLastUserId() throws SQLException, NamingException {
-		final Connection c;
-		final Statement stmt;
-		int id;
-			DataSource ds = null;
-			InitialContext ic;
-			ic = new InitialContext();
-		       ds = (DataSource) ic.lookup("java:jboss/datasources/SampleDS");
-		//	ds = (DataSource) ic.lookup("java:/SampleDS");
-		       
-			//c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-			 //       "admin", "123");
-		//	out.println("Connected");
-		       c=ds.getConnection();
-			stmt = c.createStatement();
-			ResultSet rs = stmt.executeQuery( "select count(id) from users");
-			rs.next();
-			id = rs.getInt("count");
-                        rs.close();
-			stmt.close();
-			c.close();
-		return id+1;
-	}
-
+        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
@@ -108,18 +60,21 @@ public class NewGameServlet extends HttpServlet {
 			CreateGame(request, response);
 			if (ok) getServletContext().getRequestDispatcher(
 			        response.encodeRedirectURL("/game.jsp")).forward(request, response);
-                        else getServletContext().getRequestDispatcher(
+                       else getServletContext().getRequestDispatcher(
 			        response.encodeRedirectURL("/NewGame.jsp")).forward(request, response);
 		} catch (NamingException e) {
 			getServletContext().getRequestDispatcher(
 			        response.encodeRedirectURL("/nameEx")).forward(request, response);
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+                        return;
 		} catch (SQLException e) {
 			getServletContext().getRequestDispatcher(
 			        response.encodeRedirectURL("" + e)).forward(request, response);
+                        return;
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+                        
 		}
 		return;
 	}
