@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+import ru.quizgame.auxiliaryclasses.TableSort.Order;
 import ru.quizgame.daoclasses.GameDao;
 import ru.quizgame.daoclasses.PairDao;
 import ru.quizgame.daoclasses.QuestionDao;
@@ -39,11 +40,18 @@ import ru.quizgame.entityclasses.User;
  */
 @WebServlet("/rating")
 public class RatingServlet extends HttpServlet{
+    private String order;
+    private String searchString;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
         //request.setCharacterEncoding("Cp1251");
         //System.out.println(request.getParameter("searchString"));
-        request.setAttribute("searchString", new String(request.getParameter("searchString").getBytes(ISO_8859_1), UTF_8));
+        if(request.getParameter("searchString") != null) 
+            searchString = new String(request.getParameter("searchString").getBytes(ISO_8859_1), UTF_8);
+        request.setAttribute("searchString", searchString);
+        if (request.getParameter("order") != null) 
+            order = (String) request.getParameter("order");
+        request.setAttribute("order", order);
         getServletContext().getRequestDispatcher(
         response.encodeRedirectURL("/rating.jsp")).forward(request, response);
     }

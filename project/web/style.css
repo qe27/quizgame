@@ -62,9 +62,13 @@ li {
     border: 2px solid orange;
     background: #F5F6E9;
 }
+input {
+    margin-right: 0.5cm;
+}
 table {
     text-align: center;
     margin: auto;
+    margin-top: 1cm;
     border-collapse: collapse;
 }
 td, th {

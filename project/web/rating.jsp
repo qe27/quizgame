@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html" pageEncoding="UTF-8" import = "java.util.*, java.io.*, java.sql.*,
         javax.sql.*, javax.naming.InitialContext, 
         ru.quizgame.entityclasses.User, ru.quizgame.daoclasses.UserDao,         
-        ru.quizgame.daoclasses.GameDao" %>
+        ru.quizgame.daoclasses.GameDao, ru.quizgame.auxiliaryclasses.TableSort" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
@@ -34,15 +34,22 @@
             Рейтинг
         </h1>
         <form method="POST" action="rating">
-            <p>Имя: <input type="text" name="searchString" width="40"></p>
+            <p>Имя: <input type="text" name="searchString" width="40">          
+            <button type="submit" name="game">
+                Искать
+            </button> 
+            </p>
         </form>
-        <table border="1" width="600">
-        <tr>
-            <th>Имя</th>
-            <th>Очки</th>
-            <th>Правильных ответов</th>
-            <th>Сыграно игр</th>
-        </tr>
+        <form action="rating" method="POST">
+            <p>Упорядочить по: <select name="order" type="text">
+             <option value="SCORE">Числу очков</option>
+             <option value="HIT_RATIO">Точности ответов</option>
+             <option value="GAMES">Числу игр</option>
+            </select>
+            <button type="submit" value="OK">OK</button>
+            </p>
+       </form>
+        
         
         <%
             DataSource ds = null;
@@ -56,6 +63,24 @@
                 con = ds.getConnection();
                 stmt = con.createStatement();
                 List<User> list = UserDao.getAllUsers();
+                TableSort sorting = new TableSort();
+                String order = (String) request.getAttribute("order");
+                if(order == null) order = "SCORE";%>
+                <table border="1" width="600">
+                <tr>
+                    <th>Имя</th>
+                    <th><% if(TableSort.Order.valueOf(order) == TableSort.Order.SCORE) %> <font color="#8F8"><%;%>
+                            Очки <% if(TableSort.Order.valueOf(order) == TableSort.Order.SCORE) %> </font> <%;%>
+                    </th>
+                    <th><% if(TableSort.Order.valueOf(order) == TableSort.Order.HIT_RATIO) %> <font color="#8F8"><%;%>
+                            Точность ответов <% if(TableSort.Order.valueOf(order) == TableSort.Order.HIT_RATIO) %> </font> <%;%>
+                    </th>
+                    <th><% if(TableSort.Order.valueOf(order) == TableSort.Order.GAMES) %> <font color="#8F8"><%;%>
+                            Сыграно игр <% if(TableSort.Order.valueOf(order) == TableSort.Order.GAMES) %> </font> <%;%>
+                    </th>
+                </tr>
+                <% sorting.setOrder(TableSort.Order.valueOf(order));
+                sorting.sort(list);
                 for(User user: list) { 
                     if(request.getAttribute("searchString") == null || 
                     user.getName().startsWith((String)request.getAttribute("searchString"))) {%>

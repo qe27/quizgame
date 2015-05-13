@@ -1,24 +1,66 @@
-
-INSERT INTO users VALUES (default, 'christopher_robin');
-INSERT INTO users VALUES (default, 'winnie_the_pooh');
-INSERT INTO users VALUES (default, 'owl');
-INSERT INTO users VALUES (default, 'pigglet');
-INSERT INTO users VALUES (default, 'rabbit');
+INSERT INTO users VALUES (default, 'ChristopherRobin');
+INSERT INTO users VALUES (default, 'WinnieThePooh');
+INSERT INTO users VALUES (default, 'Owl');
+INSERT INTO users VALUES (default, 'Piglet');
+INSERT INTO users VALUES (default, 'Rabbit');
+INSERT INTO users VALUES (default, 'Eeyore');
+INSERT INTO users VALUES (default, 'Tigger');
+INSERT INTO users VALUES (default, 'Kanga');
+INSERT INTO users VALUES (default, 'Roo');
+INSERT INTO users VALUES (default, 'ВладимирПутин');
 
 INSERT INTO games VALUES (default, 1, 50, true);
 INSERT INTO games VALUES (default, 1, 50, true);
 INSERT INTO games VALUES (default, 2, 10, true);
-INSERT INTO games VALUES (default, 2, 20, true);
+INSERT INTO games VALUES (default, 2, 10, true);
 INSERT INTO games VALUES (default, 2, 40, true);
-INSERT INTO games VALUES (default, 4, 0, true);
+INSERT INTO games VALUES (default, 4, 10, true);
+INSERT INTO games VALUES (default, 3, 70, true);
+INSERT INTO games VALUES (default, 3, 60, true);
+INSERT INTO games VALUES (default, 5, 20, true);
+INSERT INTO games VALUES (default, 6, 40, true);
+INSERT INTO games VALUES (default, 7, 30, true);
+INSERT INTO games VALUES (default, 7, 30, true);
+INSERT INTO games VALUES (default, 7, 20, true);
+INSERT INTO games VALUES (default, 7, 20, true);
+INSERT INTO games VALUES (default, 7, 20, true);
 
 INSERT INTO questions VALUES (default, 'Сколько стран в мире?', '1)менее 150@2)160@3)240@4)более 250@', 4, 10);
 INSERT INTO questions VALUES (default, 'Какая страна выиграла чемпионат мира по футболу в 2014 году?', '1)Бразилия@2)Франция@3)Германия@4)Россия@', 3, 10);
 INSERT INTO questions VALUES (default, 'Сколько законов Ньютона в классической механике?', '1)1@2)2@3)3@4)4@', 3, 10);
 INSERT INTO questions VALUES (default, 'Сколько человек в хоккейной команде?', '1)5@2)6@3)7@4)8@', 2, 10);
-INSERT INTO questions VALUES (default, 'Что из нижеперечисленного не является называнием языка программирования?', '1)С@2)С%@3)C++@4)C#@', 2, 10);
-INSERT INTO questions VALUES (default, 'Что из нижеперечиселнного не является разновидностью макарон?', '1)Тортеллини@2)Фетуччине@3)Тальятелле@4)Лингуине@', 1, 30);
+INSERT INTO questions VALUES (default, 'Что из нижеперечисленного не является названием языка программирования?', '1)С@2)С%@3)C++@4)C#@', 2, 10);
+INSERT INTO questions VALUES (default, 'Что из нижеперечисленного не является разновидностью макарон?', '1)Тортеллини@2)Фетуччине@3)Тальятелле@4)Лингуине@', 1, 30);
 INSERT INTO questions VALUES (default, 'Какова длина вектора с координатами (5,12)?', '1)7@2)10@3)13@4)17@', 3, 10);
+INSERT INTO questions VALUES (default, 'Картинка какого города изображена на 500-рублевой купюре?', '1)Архангельск@2)Москва@3)Санкт-Петербург@4)Красноярск@', 1, 20);
+INSERT INTO questions VALUES (default, 'Сколько лет длилась столетняя война?', '1)100@2)104@3)108@4)116@', 4, 20);
+INSERT INTO questions VALUES (default, 'Какая марка машин продвигается с рекламным лозунгом "управляй мечтой"?', '1)Volkswagen@2)Toyota@3)Nissan@4)Renault@', 2, 10);
+INSERT INTO questions VALUES (default, 'Чей домик оказался крепче всех в сказке про 3 поросят?', '1)Ниф-Ниф@2)Нуф-Нуф@3)Наф-Наф@4)Пятачок@', 3, 10);
+INSERT INTO questions VALUES (default, 'Какой знак восточного гороскопа следует за знаком Дракона?', '1)Змея@2)Кролик@3)Свинья@4)Собака@', 1, 10);
+INSERT INTO questions VALUES (default, 'Изучение соединений какого элемента является основой органической химии?', '1)Водород@2)Углерод@3)Кислород@4)Азот@', 2, 10);
+INSERT INTO questions VALUES (default, 'В какой области не присуждают Нобелевскую премию?', '1)Биология@2)Физика@3)Химия@4)Математика@', 4, 10);
+INSERT INTO questions VALUES (default, 'Любимый цвет ослика Иа-Иа?', '1)Красный@2)Синий@3)Зеленый@4)Серый@', 3, 10);
+INSERT INTO questions VALUES (default, 'Как зовут зайчика - героя телепередачи "Спокойной ночи, малыши!"?', '1)Степашка@2)Хрюша@3)Каркуша@4)Филя@', 1, 10);
+INSERT INTO questions VALUES (default, 'Кто сыграл главного героя в фильме "Форест Гамп"?', '1)Брэд Питт@2)Брюс Уиллис@3)Уилл Смит@4)Том Хэнкс@', 4, 10);
+INSERT INTO questions VALUES (default, 'Родиной какого киногероя была планета Криптон?', '1)Халк@2)Супермен@3)Железный человек@4)Бэтмен@', 3, 10);
+INSERT INTO questions VALUES (default, 'Как называлась кинокартина, получившая в 1991 году Оскара в категории "Лучший фильм"?', '1)Титаник@2)Молчание ягнят@3)Побег из Шоушенка@4)Перл Харбор@', 2, 20);
+INSERT INTO questions VALUES (default, 'Сколько рук у персонажа мультфильма "Тайна третьей планеты" Громозеки?', '1)2@2)4@3)6@4)8@', 3, 10);
+INSERT INTO questions VALUES (default, 'Какое варенье нес к Медвежонку Ежик в мультфильме "Ежик в тумане"?', '1)Малиновое@2)Вишневое@3)Клубничное@4)Смородиновое@', 1, 20);
+INSERT INTO questions VALUES (default, 'Кто из этих великих ученых открыл радиоактивность урана?', '1)Радон@2)Джоуль@3)Кюри@4)Беккерель@', 4, 20);
+INSERT INTO questions VALUES (default, 'Какой витамин называется аскорбиновой кислотой?', '1)A@2)B@3)C@4)D@', 3, 10);
+INSERT INTO questions VALUES (default, 'Назовите формулу угарного газа', '1)CO@2)CO2@3)C2O@4)C2O2@', 1, 10);
+INSERT INTO questions VALUES (default, 'Какие формы земной поверхности изучает спелеолог?', '1)Горы@2)Пещеры@3)Озера@4)Ущелья@', 2, 10);
+INSERT INTO questions VALUES (default, 'Сколько молочных зубов вырастает у человека?', '1)16@2)20@3)24@4)28@', 2, 20);
+INSERT INTO questions VALUES (default, 'Как называется самый большой город Китая?', '1)Пекин@2)Гонконг@3)Шанхай@4)Тайбей@', 3, 10);
+INSERT INTO questions VALUES (default, 'Какой стране принадлежит знаменитый остров Пасхи?', '1)Парагвай@2)Перу@3)Бразилия@4)Чили@', 4, 20);
+INSERT INTO questions VALUES (default, 'В каком городе самая большая численность населения?', '1)Токио@2)Нью-Йорк@3)Шанхай@4)Москва@', 1, 10);
+INSERT INTO questions VALUES (default, 'В каком городе мира раньше всего появилось метро?', '1)Берлин@2)Лондон@3)Париж@4)Рим@', 2, 10);
+INSERT INTO questions VALUES (default, 'Чем обливают на новый год прохожих в Таиланде?', '1)Шампанским@2)Пивом@3)Водой@4)Молоком@', 3, 30);
+INSERT INTO questions VALUES (default, 'Сколько в Москве железнодорожных вокзалов?', '1)6@2)7@3)8@4)9@', 4, 10);
+INSERT INTO questions VALUES (default, 'Бывшая столица Германии', '1)Бонн@2)Бремен@3)Гамбург@4)Мюнхен@', 1, 10);
+INSERT INTO questions VALUES (default, 'В какой стране расположен город Антверпен?', '1)Германия@2)Бельгия@3)Австрия@4)Нидерланды@', 2, 10);
+INSERT INTO questions VALUES (default, 'Название какого европейского города первоначально означало "датский город"?', '1)Таллин@2)Бремен@3)Стокгольм@4)Копенгаген@', 1, 30);
+INSERT INTO questions VALUES (default, 'Назовите самое большое по площади государство в Африке?', '1)Нигерия@2)ЮАР@3)Судан@4)Нигер@', 3, 10);
 
 INSERT INTO pairs VALUES (1,1,1,true);
 INSERT INTO pairs VALUES (1,2,2,true);
@@ -51,7 +93,61 @@ INSERT INTO pairs VALUES (5,4,4,false);
 INSERT INTO pairs VALUES (5,6,5,true);
 
 INSERT INTO pairs VALUES (6,2,1,false);
-INSERT INTO pairs VALUES (6,1,2,false);
+INSERT INTO pairs VALUES (6,1,2,true);
 INSERT INTO pairs VALUES (6,3,3,false);
 INSERT INTO pairs VALUES (6,7,4,false);
 INSERT INTO pairs VALUES (6,6,5,false);
+
+INSERT INTO pairs VALUES (7,2,1,true);
+INSERT INTO pairs VALUES (7,1,2,true);
+INSERT INTO pairs VALUES (7,3,3,true);
+INSERT INTO pairs VALUES (7,7,4,true);
+INSERT INTO pairs VALUES (7,6,5,true);
+
+INSERT INTO pairs VALUES (8,5,1,false);
+INSERT INTO pairs VALUES (8,1,2,true);
+INSERT INTO pairs VALUES (8,3,3,true);
+INSERT INTO pairs VALUES (8,7,4,true);
+INSERT INTO pairs VALUES (8,6,5,true);
+
+INSERT INTO pairs VALUES (9,5,1,false);
+INSERT INTO pairs VALUES (9,1,2,true);
+INSERT INTO pairs VALUES (9,3,3,false);
+INSERT INTO pairs VALUES (9,7,4,true);
+INSERT INTO pairs VALUES (9,6,5,false);
+
+INSERT INTO pairs VALUES (10,5,1,true);
+INSERT INTO pairs VALUES (10,1,2,true);
+INSERT INTO pairs VALUES (10,3,3,true);
+INSERT INTO pairs VALUES (10,7,4,true);
+INSERT INTO pairs VALUES (10,6,5,false);
+
+INSERT INTO pairs VALUES (11,5,1,true);
+INSERT INTO pairs VALUES (11,1,2,true);
+INSERT INTO pairs VALUES (11,3,3,true);
+INSERT INTO pairs VALUES (11,7,4,false);
+INSERT INTO pairs VALUES (11,6,5,false);
+
+INSERT INTO pairs VALUES (12,5,1,true);
+INSERT INTO pairs VALUES (12,1,2,true);
+INSERT INTO pairs VALUES (12,3,3,true);
+INSERT INTO pairs VALUES (12,7,4,false);
+INSERT INTO pairs VALUES (12,6,5,false);
+
+INSERT INTO pairs VALUES (13,5,1,true);
+INSERT INTO pairs VALUES (13,1,2,true);
+INSERT INTO pairs VALUES (13,3,3,false);
+INSERT INTO pairs VALUES (13,7,4,false);
+INSERT INTO pairs VALUES (13,6,5,false);
+
+INSERT INTO pairs VALUES (14,5,1,true);
+INSERT INTO pairs VALUES (14,1,2,true);
+INSERT INTO pairs VALUES (14,3,3,false);
+INSERT INTO pairs VALUES (14,7,4,false);
+INSERT INTO pairs VALUES (14,6,5,false);
+
+INSERT INTO pairs VALUES (15,5,1,true);
+INSERT INTO pairs VALUES (15,1,2,true);
+INSERT INTO pairs VALUES (15,3,3,false);
+INSERT INTO pairs VALUES (15,7,4,false);
+INSERT INTO pairs VALUES (15,6,5,false);
