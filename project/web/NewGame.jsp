@@ -8,26 +8,7 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    <form action="index.jsp">
-        <button type="submit" name="game">
-            Главная страница
-        </button> 
-    </form>
-     <form action="GameList.jsp">
-        <button type="submit" name="game">
-            Список игр
-        </button> 
-    </form>
-    <form action="rating">
-        <button type="submit" name="game">
-            Рейтинг
-        </button> 
-    </form>   
-    <form action="addQues.jsp">
-        <button type="submit" name="game">
-            Добавить вопрос
-        </button> 
-    </form>
+    <%@include file="/menu.jsp" %>
 <form name="test" method="post" action="NewGameServlet">
   <p><b>Ваше имя </b>(не более 20 символов, русские и английские буквы):<br>
    <input type="text" name = "name" size="40">

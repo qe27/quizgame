@@ -58,13 +58,12 @@
                     <input type="radio" name="answer" value="4"/><%=answers[3]%> <br>
                 </p>
                 <button type="submit" name="next">
-                      Далее
+                    Далее
                 </button>
                 <br>
                 <button type="submit" name="back">
                     Прервать игру
                 </button> 
-
             </form>
                                               
     </body>

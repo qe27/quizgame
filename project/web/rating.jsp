@@ -10,31 +10,12 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
-        <form action="index.jsp">
-            <button type="submit" name="game">
-                Главная страница
-            </button> 
-        </form>
-         <form action="GameList.jsp">
-            <button type="submit" name="game">
-                Список игр
-            </button> 
-        </form>
-        <form action="rating">
-            <button type="submit" name="game">
-                Рейтинг
-            </button> 
-        </form>   
-        <form action="addQues.jsp">
-            <button type="submit" name="game">
-                Добавить вопрос
-            </button> 
-        </form>
+        <%@include file="/menu.jsp" %>
         <h1>
             Рейтинг
         </h1>
         <form method="POST" action="rating">
-            <p>Имя: <input type="text" name="searchString" width="40">          
+            <p>Искать имя: <input type="text" name="searchString" width="40">          
             <button type="submit" name="game">
                 Искать
             </button> 

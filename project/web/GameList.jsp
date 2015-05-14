@@ -1,4 +1,4 @@
-<%@page import="ru.quizgame.daoclasses.GameDao"%>
+﻿<%@page import="ru.quizgame.daoclasses.GameDao"%>
 <%@ page language="java" contentType="text/html;"
 import = "java.io.IOException,
                                     java.sql.DriverManager,
@@ -18,7 +18,7 @@ import = "java.io.IOException,
                                     ru.quizgame.entityclasses.*,
                                     javax.sql.DataSource"
    
-pageEncoding="utf-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,26 +27,7 @@ pageEncoding="utf-8"%>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    <form action="index.jsp">
-        <button type="submit" name="game">
-            Главная страница
-        </button> 
-    </form>
-     <form action="NewGame.jsp">
-        <button type="submit" name="game">
-            Начать игру
-        </button> 
-    </form>
-    <form action="rating">
-        <button type="submit" name="game">
-            Рейтинг
-        </button> 
-    </form>
-    <form action="addQues.jsp">
-        <button type="submit" name="game">
-            Добавить вопрос
-        </button> 
-    </form>
+    <%@include file="/menu.jsp" %>
 <h1>Список игр</h1>
 <ul>
             <%

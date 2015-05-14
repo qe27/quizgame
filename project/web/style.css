@@ -64,6 +64,11 @@ li {
 }
 input {
     margin-right: 0.5cm;
+    margin-left: 0.5cm;
+}
+select {
+    margin-right: 0.5cm;
+    margin-left: 0.5cm;
 }
 table {
     text-align: center;
