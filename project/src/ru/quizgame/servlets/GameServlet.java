@@ -43,13 +43,6 @@ public class GameServlet extends HttpServlet {
      throws ServletException, IOException {
         i++;        
         if (request.getParameter("back")!=null) {
-            try {
-                    PairDao.deletePair(game_id);
-            } catch (SQLException ex) {
-                    Logger.getLogger(GameServlet.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (NamingException ex) {
-                    Logger.getLogger(GameServlet.class.getName()).log(Level.SEVERE, null, ex);
-            }
             
             try {
                     GameDao.updateGame(game_id,score,finished);

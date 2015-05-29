@@ -14,6 +14,8 @@
          q=GameServlet.getQuestions();    
     int game_id=GameDao.findLastGameId()-1;
     %>
+    
+   
      
     <%
     int difficulty=0;
@@ -29,6 +31,12 @@
     correct_answer=ques.getCorrectAnswer();
     difficulty=ques.getDifficulty();%>
        
+    <%
+    for (int i=0;i<4;i++) answers[i]=answers[i].substring(2);   
+    %>
+    
+    
+    
     <% 
     GameServlet.difficulty=difficulty; 
     GameServlet.correct_answer=correct_answer;
@@ -52,18 +60,22 @@
    
             <form action="GameServlet" method="post">
                 
-                <p><input type="radio" name="answer" value="1" checked/><%=answers[0]%><br>
-                    <input type="radio" name="answer" value="2"/><%=answers[1]%> <br>
-                    <input type="radio" name="answer" value="3"/><%=answers[2]%><br>
-                    <input type="radio" name="answer" value="4"/><%=answers[3]%> <br>
+                <p align="center">
+                 <input type="radio" name="answer" value="1" checked/><%=answers[0]%><br>
+                 <input type="radio" name="answer" value="2"/><%=answers[1]%> <br>
+                 <input type="radio" name="answer" value="3"/><%=answers[2]%><br>
+                 <input type="radio" name="answer" value="4"/><%=answers[3]%> <br>
                 </p>
+                
                 <button type="submit" name="next">
-                    Далее
+                      Далее
                 </button>
                 <br>
                 <button type="submit" name="back">
                     Прервать игру
                 </button> 
+
+                
             </form>
                                               
     </body>
